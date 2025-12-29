@@ -327,7 +327,7 @@ fetch("https://api.example.com/data")
 * Scalability
 * Team collaboration
 
-> **Check differences:**
+> [!TIP] **Check differences:**  
 > [All together](https://vheikkiniemi.github.io/BasicsOfWeb2025SPages/adwebdev/lectureA/merged.html)  
 > [Separated](https://vheikkiniemi.github.io/BasicsOfWeb2025SPages/adwebdev/lectureA/separated.html)
 
