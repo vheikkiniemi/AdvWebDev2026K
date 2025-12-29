@@ -341,19 +341,3 @@ fetch("https://api.example.com/data")
 
 ---
 
-## 🏗️ Frameworks → Overview
-
-**❓ What is a Framework?**
-
-* A structured foundation that speeds up development
-* Enforces best practices
-* Reduces repetitive work
-
----
-
-**🎯 Choosing a Framework**
-
-* Project requirements
-* Team expertise
-* Community & ecosystem
-* Long-term maintainability
