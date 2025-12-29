@@ -329,8 +329,8 @@ fetch("https://api.example.com/data")
 
 > [!TIP]  
 > **Check differences:**  
-> [All together](https://vheikkiniemi.github.io/BasicsOfWeb2025SPages/adwebdev/lectureA/merged.html)  
-> [Separated](https://vheikkiniemi.github.io/BasicsOfWeb2025SPages/adwebdev/lectureA/separated.html)
+> [All together](https://vheikkiniemi.github.io/BasicsOfWeb2025SPages/advwebdev/lectureA/merged.html)  
+> [Separated](https://vheikkiniemi.github.io/BasicsOfWeb2025SPages/advwebdev/lectureA/separated.html)
 
 ---
 
