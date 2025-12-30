@@ -67,9 +67,12 @@ HTML5 introduced:
 
 **🎯 HTML in UI / UX**
 
-* ✅ Logical structure improves **usability**
-* 🧠 Semantic elements improve **accessibility** and **SEO**
-* 🧩 Forms and inputs enable interaction
+- The foundation of user experience (UX):
+    - A clear and logical structure supports usability.
+    - Semantic elements (e.g., `<nav>`, `<header>`) help both users and search engines.
+- Supporting the user interface (UI):
+    - HTML defines the structure upon which CSS adds visual elements.
+    - Forms and interactive elements (e.g., `<input>`, `<button>`) make the UI functional.
 
 --
 
@@ -120,6 +123,7 @@ HTML5 introduced:
   * Usability
   * SEO
   * Accessibility
+  * Maintainability
 
 ---
 
@@ -159,6 +163,8 @@ h1 {
   text-align: center;
 }
 ```
+- Selectors define what elements styles apply to.
+- Properties and values determine the style.
 
 ---
 
@@ -183,13 +189,13 @@ h1 {
 
 **📐 Layout Tools**
 
-* **Flexbox**: one-dimensional layouts  
+* **Flexbox**: one-dimensional layouts → An easy way to create flexible and centered layouts.  
 ```css
 display: flex;
 justify-content: center;
 align-items: center;
 ```
-* **Grid**: two-dimensional layouts  
+* **Grid**: two-dimensional layouts → A powerful tool for complex layouts.
 ```css
 display: grid;
 grid-template-columns: repeat(3, 1fr);
@@ -235,6 +241,13 @@ h1 {
 ```
 * 🧪 CSS Houdini for extensibility
 
+---
+
+**✅ CSS Summary**
+
+- CSS makes web pages **visually appealing**.  
+- It enables **responsiveness and animations**.  
+- Together with **HTML and JavaScript, CSS** is the foundation of web design and styling.
 
 ---
 
@@ -264,7 +277,7 @@ h1 {
 
 ---
 
-**🧪 JavaScript Basics**
+**🧪 JavaScript Basics**  
 
 ```javascript
 const name = "Ville";
@@ -281,6 +294,8 @@ greet();
 
 **🌳 DOM Manipulation**
 
+- JavaScript can dynamically change the content of a web page.
+
 ```javascript
 document.getElementById("title").innerText = "Welcome!";
 ```
@@ -288,6 +303,8 @@ document.getElementById("title").innerText = "Welcome!";
 ---
 
 **🖱️ Events**
+
+- JavaScript reacts to user actions.
 
 ```javascript
 button.addEventListener("click", () => {
@@ -299,11 +316,20 @@ button.addEventListener("click", () => {
 
 **🌐 Fetch & APIs**
 
+- Enables loading data without reloading the page.
+
 ```javascript
 fetch("https://api.example.com/data")
   .then(res => res.json())
   .then(data => console.log(data));
 ```
+
+---
+
+**✅ JavaScript (JS) Summary**
+- JavaScript adds **functionality** to web pages.
+- Together with HTML and CSS, it forms the foundation of modern web development.
+- It enables the development of everything from web applications to mobile and server solutions.
 
 ---
 
