@@ -53,7 +53,7 @@ Good luck and enjoy learning JavaScript! 🚀
 5. Copy the **direct link to the Markdown file** in your repository.
 6. Submit **only the link** to the Markdown file in the **Itslearning answer box**.
 
-⚠️ Do not upload the file itself to Itslearning — only the link is required.
+⚠️ Do not upload the file itself to Itslearning → only the link is required.
 
 ---
 
