@@ -43,7 +43,7 @@ Good luck and enjoy learning JavaScript! 🚀
 
 ## 📤 Submission Instructions to Itslearning
 
-1. Create a **new repository** in GitHub (public or private is fine).
+1. Create a **new repository** in GitHub.
 2. In the repository, create a **Markdown file** (for example:
    `javascript-video-notes.md`).
 3. Add your notes to this Markdown file:
@@ -54,6 +54,9 @@ Good luck and enjoy learning JavaScript! 🚀
 6. Submit **only the link** to the Markdown file in the **Itslearning answer box**.
 
 ⚠️ Do not upload the file itself to Itslearning → only the link is required.
+
+> [!NOTE]
+> **Ensure that the link is readable by the teacher → Use, for example, incognito mode in your browser**
 
 ---
 
