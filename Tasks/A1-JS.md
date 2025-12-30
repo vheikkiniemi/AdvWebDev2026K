@@ -26,7 +26,7 @@ Watch the videos in the **Beginner’s Series to JavaScript** available on Micro
    * Describe what you learned, **or**
    * Highlight something you found important or interesting.
 3. Collect all your notes into a single response.
-4. Submit your notes → Check [Submission Instructions](#-submission-instructions-itslearning)
+4. Submit your notes → Check [Submission Instructions](#-submission-instructions-to-itslearning)
 
 > [!NOTE]
 > The notes should be written **in your own words**.
