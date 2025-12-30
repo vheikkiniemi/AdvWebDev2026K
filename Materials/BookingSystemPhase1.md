@@ -86,7 +86,7 @@ Press **CTRL + C** in the terminal.
 
 ***
 
-## 🧩 **Dockerfile Explained**
+## 🧩 **Dockerfile**
 
 ```dockerfile
 FROM nginx:alpine
