@@ -1,14 +1,13 @@
 > [!NOTE]
 > The material was created with the help of ChatGPT and Copilot.
 
-# 🌐 **Getting Started with Docker and Nginx**
+# 🌐 Getting Started with Docker and Nginx
 
-## 🐳 **What is Docker?**
+## 🐳 What is Docker?
 
-Docker is a platform that packages applications and their dependencies into **containers**.  
-A container is a lightweight, standalone environment that runs your app the same way on any system.
+Docker is a platform that packages applications and their dependencies into **containers**. A container is a lightweight, standalone environment that runs your app the same way on any system.
 
-### ✅ **Why use Docker?**
+### ✅ Why use Docker?
 
 *   🔒 **Consistency**: Runs the same everywhere
 *   🛡 **Isolation**: No conflicts with other software
@@ -17,16 +16,15 @@ A container is a lightweight, standalone environment that runs your app the same
 
 ***
 
-## 🎯 **Goal**
+## 🎯 Goal
 
-You have a folder with HTML files and a `Dockerfile`.  
-We will build a Docker image that serves your HTML pages using **Nginx**.
+You have a folder with HTML files and a `Dockerfile`. We will build a Docker image that serves your HTML pages using **Nginx**.
 
 ***
 
-## 🛠 **Steps to Run Your Website**
+## 🛠 Steps to Run Your Website
 
-### 1️⃣ **Install Docker**
+### 1️⃣ Install Docker
 
 *   Download Docker Desktop:  
     👉 <https://www.docker.com/products/docker-desktop>
@@ -41,12 +39,12 @@ docker --version
 
 ***
 
-### 2️⃣ **Check Your Files**
+### 2️⃣ Check Your Files
 
 Your ZIP contains:
 
 ```
-📁 Your folder/
+📁 extracted folder
 ├─ 📁 app/
 |  ├─ 📄 index.html
 |  └─ 📄 (other HTML/CSS/JS files)
@@ -56,7 +54,7 @@ Your ZIP contains:
 
 ***
 
-### 3️⃣ **Build the Docker Image**
+### 3️⃣ Build the Docker Image
 
 ```bash
 docker build -t bs-phase1 .
@@ -64,7 +62,7 @@ docker build -t bs-phase1 .
 
 ***
 
-### 4️⃣ **Run the Container**
+### 4️⃣ Run the Container
 
 ```bash
 docker run --rm -p 8080:80 bs-phase1
@@ -72,7 +70,7 @@ docker run --rm -p 8080:80 bs-phase1
 
 ***
 
-### 5️⃣ **View Your Website**
+### 5️⃣ View Your Website
 
 Open:
 
@@ -80,13 +78,13 @@ Open:
 
 ***
 
-### 6️⃣ **Stop the Container**
+### 6️⃣ Stop the Container
 
 Press **CTRL + C** in the terminal.
 
 ***
 
-## 🧩 **Dockerfile**
+## 🧩 Dockerfile
 
 ```dockerfile
 FROM nginx:alpine
@@ -98,7 +96,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ***
 
-## 🔍 **Troubleshooting**
+## 🔍 Troubleshooting
 
 *   ⚠ **Port 8080 in use?**  
     Use another port:
@@ -128,7 +126,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ***
 
-## 🗑 **Remove Containers and Images**
+## 🗑 Remove Containers and Images
 
 *   Stop container:
     ```bash
@@ -145,7 +143,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ***
 
-## 🚀 **Other Ways to handle Containers**
+## 🚀 Other Ways to handle Containers
 
 *   **Detached mode**:
     ```bash
@@ -179,7 +177,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ***
 
-# 💡 **Think About This: If an html file is edited, how do you make the changes visible?**
+# 💡 Think About This: If an html file is edited, how do you make the changes visible?
 
 
 ## ✅ 1. RECOMMENDED: Use a bind-mount (code from your machine → into the container)
@@ -209,7 +207,7 @@ Note:
 👉 Now:
 
 * you edit files on your computer
-* the container sees the changes immediately (or when you restart the process inside the container — depends on the app)
+* the container sees the changes immediately (or when you restart the process inside the container → Depends on the app)
 
 ---
 
