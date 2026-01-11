@@ -78,13 +78,15 @@
 
 ### 📈 [HTTP Versions Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP)
 
-#### HTTP/1.1
+**HTTP/1.1**
 
 * Persistent connections
 * Text-based
 * Head-of-Line blocking at TCP level
 
-#### HTTP/2
+---
+
+**HTTP/2**
 
 * Binary protocol
 * Multiplexing
@@ -92,7 +94,7 @@
 
 ---
 
-### 🚀 HTTP/3 – Modern Web Transport
+**HTTP/3 – Modern Web Transport**
 
 * Built on **QUIC (UDP-based)** instead of TCP
 * Benefits:
