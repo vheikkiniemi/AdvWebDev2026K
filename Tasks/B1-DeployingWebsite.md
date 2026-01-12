@@ -86,7 +86,7 @@ In other words: **the page should load without the filename showing in the addre
 
 ## 📤 Submission Instructions to Itslearning
 
-1. Open the A2 task in Itslearning.
+1. Open the B1 task in Itslearning.
 2. Upload **two screenshots** in the answer box:
 
    * One for the VM
