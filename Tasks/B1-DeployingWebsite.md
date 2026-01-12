@@ -1,7 +1,7 @@
 > [!NOTE]
 > The material was created with the help of ChatGPT and Copilot. 
 
-# 📘 A2 task: Deploy a Website from a ZIP (VM + Docker)
+# 📘 B1 task: Deploy a Website from a ZIP (VM + Docker)
 
 ## 🎯 Goal
 
