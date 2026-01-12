@@ -1,7 +1,7 @@
 > [!NOTE]
 > The material was created with the help of ChatGPT and Copilot.
 
-# 🌐 HTML, CSS, and JavaScript – On-Premise and VM
+# 🌐 Web Service Deployment in Virtual and Container Environments
 
 > ℹ️ *This material introduces how web applications communicate, where they run, and how they are deployed.*
 
