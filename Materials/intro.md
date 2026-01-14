@@ -169,12 +169,6 @@ Everyone must be able to:
 
 The focus is not only on writing code, but on **operating and understanding a complete web application environment**.
 
-Alla on **selkeä, opiskelijaa rohkaiseva osio**, joka istuu luontevasti aiempaan tekstiin ja tasapainottaa teknistä vaativuutta. Sävynä on **ammatillinen mutta inhimillinen** – tärkeä erityisesti toisen vuoden opiskelijoille.
-
-Voit lisätä tämän esimerkiksi **Environment Requirement -osion jälkeen**.
-
----
-
 ## 🤝 Learning Together → You Are Not Alone
 
 This scenario is **technically demanding**, and that is intentional.
