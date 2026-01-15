@@ -74,7 +74,7 @@ HTML5 introduced:
     - HTML defines the structure upon which CSS adds visual elements.
     - Forms and interactive elements (e.g., `<input>`, `<button>`) make the UI functional.
 
---
+---
 
 **♿ HTML and Accessibility**
 
