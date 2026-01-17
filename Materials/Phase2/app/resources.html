@@ -102,7 +102,8 @@
                     <div class="rounded-3xl bg-white p-8 shadow-soft">
                         <h2 class="text-xl font-semibold">Resource form</h2>
                         <p class="mt-1 text-sm text-black/60">
-                            All fields are required. Fill in the details below. Use Create for new items, Update for existing ones, and Delete to remove.
+                            All fields are required. Fill in the details below. Use Create for new items, Update for
+                            existing ones, and Delete to remove.
                         </p>
 
                         <form class="mt-8 space-y-6" id="resourceForm" novalidate>
@@ -113,7 +114,8 @@
                                 </label>
                                 <div id="resourceNameContainer"></div>
                                 <p class="mt-2 text-xs text-black/50">
-                                    Use a short, unique name users recognize (5–30 characters). Use letters, numbers, and spaces only.
+                                    Use a short, unique name users recognize (5–30 characters). Use letters, numbers,
+                                    and spaces only.
                                 </p>
                             </div>
 
@@ -127,57 +129,86 @@
                                     class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none
                          focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30 transition-all duration-200 ease-out"></textarea>
                                 <p class="mt-2 text-xs text-black/50">
-                                    Keep it practical: what it is, and who it’s for (10–50 characters). Use letters, numbers, and spaces only.
+                                    Keep it practical: what it is, and who it’s for (10–50 characters). Use letters,
+                                    numbers, and spaces only.
                                 </p>
                             </div>
 
-                            <!-- Availability + Price (2 columns on large screens) -->
-                            <div class="grid gap-6 lg:grid-cols-2">
-                                <!-- Availability -->
-                                <div>
-                                    <label for="resourceAvailable" class="block text-sm font-semibold">
+                            <!-- Availability + Price -->
+                            <div class="grid gap-6 lg:grid-cols-3">
+
+                                <!-- Availability (Switch) -->
+                                <div class="lg:col-span-1">
+                                    <span class="block text-sm font-semibold mb-2">
                                         Availability
-                                    </label>
-                                    <select id="resourceAvailable" name="resourceAvailable"
-                                        class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none
-                           focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30 transition-all duration-200 ease-out">
-                                        <option value="true">Available</option>
-                                        <option value="false">Not available</option>
-                                    </select>
+                                    </span>
+                                    <div class="ml-1 mt-2 mb-3 flex items-center min-h-[48px]">
+
+                                        <label class="inline-flex items-center cursor-pointer select-none">
+                                            <input type="checkbox" id="resourceAvailable" name="resourceAvailable"
+                                                class="sr-only peer" />
+
+                                            <div class="relative w-11 h-6 rounded-full bg-black/20
+               peer-checked:bg-brand-primary
+               transition-all duration-200
+               after:content-['']
+               after:absolute after:top-[2px] after:left-[2px]
+               after:w-5 after:h-5 after:bg-white after:rounded-full
+               after:transition-all duration-200
+               peer-checked:after:translate-x-5">
+                                            </div>
+
+                                            <span class="ml-3 text-sm text-black/70">
+                                                Available
+                                            </span>
+                                        </label>
+                                    </div>
                                     <p class="mt-2 text-xs text-black/50">
-                                        Not available hides the resource from normal booking flows (later enforced by
-                                        backend).
+                                        When enabled, the resource is available for normal booking..
                                     </p>
                                 </div>
 
                                 <!-- Price -->
-                                <div>
+                                <div class="lg:col-span-2">
                                     <label for="resourcePrice" class="block text-sm font-semibold">
                                         Price
                                     </label>
 
-                                    <div class="mt-2 grid grid-cols-[auto_1fr_auto] gap-2 items-stretch">
-                                        <!-- Currency -->
+                                    <!-- Price value -->
+                                    <div class="mt-2 flex gap-2 items-stretch">
+                                        <input id="resourcePrice" name="resourcePrice" type="number" placeholder="0.00"
+                                            min="0" step="0.01" class="w-full max-w-[180px] rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none
+           focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30
+           transition-all duration-200 ease-out" />
+
                                         <span
                                             class="inline-flex items-center rounded-2xl border border-black/10 bg-black/5 px-4 text-sm font-semibold text-black/70">
                                             €
                                         </span>
+                                    </div>
 
-                                        <!-- Price value -->
-                                        <input id="resourcePrice" name="resourcePrice" type="number" placeholder="0.00"
-                                            class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none
-             focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30
-             transition-all duration-200 ease-out" />
 
-                                        <!-- Price unit -->
-                                        <select id="resourcePriceUnit" name="resourcePriceUnit" class="rounded-2xl border border-black/10 bg-white px-3 py-3 text-sm font-semibold
-             outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30
-             transition-all duration-200 ease-out">
-                                            <option value="hour">/ hour</option>
-                                            <option value="day">/ day</option>
-                                            <option value="week">/ week</option>
-                                            <option value="month">/ month</option>
-                                        </select>
+                                    <!-- Price unit (Radio buttons) -->
+                                    <div class="mt-4 flex flex-wrap gap-4">
+                                        <label class="inline-flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="resourcePriceUnit" value="hour" checked>
+                                            <span class="text-sm">hour</span>
+                                        </label>
+
+                                        <label class="inline-flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="resourcePriceUnit" value="day">
+                                            <span class="text-sm">day</span>
+                                        </label>
+
+                                        <label class="inline-flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="resourcePriceUnit" value="week">
+                                            <span class="text-sm">week</span>
+                                        </label>
+
+                                        <label class="inline-flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="resourcePriceUnit" value="month">
+                                            <span class="text-sm">month</span>
+                                        </label>
                                     </div>
 
                                     <p class="mt-2 text-xs text-black/50">
@@ -186,6 +217,7 @@
                                 </div>
 
                             </div>
+
 
                             <!-- Actions -->
                             <div id="resourceActions"
