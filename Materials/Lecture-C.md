@@ -5,6 +5,10 @@
 
 Below is a **material** based directly on the two attached files: [[`resources.html`](Phase2/app/resources.html)] and [[`resources.js`](Phase2/app/resources.js)]. The focus is **CSR (Client-Side Rendering) + JavaScript validation** explained step by step. All code references are grounded in the provided files.
 
+**You can also find the pages and codes at these links:**
+* https://vheikkiniemi.github.io/BasicsOfWeb2025SPages/BS/Phase1/app
+* https://vheikkiniemi.github.io/BasicsOfWeb2025SPages/BS/Phase2/app
+
 ## 🌍 Background: What, Why, and When?
 
 **🔹 What is CSR validation?**
