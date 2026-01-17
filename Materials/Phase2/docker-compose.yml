@@ -1,0 +1,6 @@
+name: booking-system-phase2
+services:
+  web:
+    image: bs-phase2
+    ports:
+      - "8081:80"
