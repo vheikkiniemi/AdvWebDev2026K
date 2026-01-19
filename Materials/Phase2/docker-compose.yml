@@ -1,3 +1,8 @@
+# BUILDING AND RUNNING: docker compose up -d
+# LOGGING: docker logs booking-system-phase2 -f
+# CONNECTING TO CONTAINER: docker exec -it booking-system-phase2 /bin/sh
+# REMOVING: docker compose down --volumes
+# REMOVING IMAGE (IF NEEDED): docker rm -f booking-system-phase2
 name: booking-system-phase2
 services:
   web:
