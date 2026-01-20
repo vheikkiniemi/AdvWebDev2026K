@@ -106,6 +106,9 @@ You must **not** change any other files.
 
 ❌ Do not edit server files, other pages, or shared scripts.
 
+> [!IMPORTANT]
+> ❌ Do not change the page’s user interface (UI) → Change the user experience (UX) instead (this is the main purpose of CSR).
+
 ---
 
 ## 📤 Submission Instructions (Itslearning)
