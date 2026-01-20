@@ -103,6 +103,7 @@ You must **not** change any other files.
 
 * `resources.html`
 * `resources.js`
+* `form.js`
 
 ❌ Do not edit server files, other pages, or shared scripts.
 
