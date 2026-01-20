@@ -30,9 +30,9 @@ In this material:
 
 Client-side validation is primarily about **user experience and early error prevention**:
 
-✅ Immediate feedback (no page reload)
-✅ Clear visual guidance (green/red states)
-✅ Reduced unnecessary backend requests
+✅ Immediate feedback (no page reload)  
+✅ Clear visual guidance (green/red states)  
+✅ Reduced unnecessary backend requests  
 ⚠️ *Not* a security mechanism by itself
 
 > Important rule of thumb:
