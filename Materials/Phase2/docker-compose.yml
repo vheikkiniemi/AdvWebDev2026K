@@ -10,3 +10,5 @@ services:
     image: bs-phase2
     ports:
       - "8081:80"
+    volumes:
+      - ./app:/usr/share/nginx/html
