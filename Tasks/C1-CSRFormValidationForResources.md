@@ -87,11 +87,11 @@ Submit **one** screenshot that clearly shows:
 
 Your GitHub repository must contain the full Booking System code under:
 
-* `BookingSystem/`
+* `BookingSystem/Phase2`
 
 Then you submit:
 
-* 🔗 a link to your repository (or directly to the `BookingSystem/` folder)
+* 🔗 a link to your repository (or directly to the `BookingSystem/Phase2` folder)
 
 ---
 
@@ -117,7 +117,7 @@ You must **not** change any other files.
 In the answer box (the C1 task), include:
 
 1. **Screenshot** (VM or Docker proof + browser view)
-2. **GitHub link** to your repository where the folder `BookingSystem/` contains the full project
+2. **GitHub link** to your repository where the folder `BookingSystem/Phase2` contains the full project
 
 ---
 
