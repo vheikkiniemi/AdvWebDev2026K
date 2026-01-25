@@ -1,4 +1,4 @@
-# 📘 Task D: Debugging Client-Side **and** Server-Side Logic in the Booking System (Phase 3)
+# 📘 Task D: Debugging Client-Side **and** Server-Side Logic in the Booking System
 
 ## 🎯 Goal
 
@@ -18,7 +18,7 @@ In this task you will practice:
 * The task **starter code is provided as a ZIP file**
   👉 https://github.com/vheikkiniemi/AdvWebDev2026K/blob/main/Materials/Phase3/BookingSystemPhase3.zip
 
-The project contains **exactly six (6) intentional errors**, distributed across:
+The project contains **at least six (6) errors**, distributed across:
 
 ### Client-side files (browser)
 
