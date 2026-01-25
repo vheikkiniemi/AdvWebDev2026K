@@ -18,7 +18,7 @@ In this task you will practice:
 * The task **starter code is provided as a ZIP file**
   👉 https://github.com/vheikkiniemi/AdvWebDev2026K/blob/main/Materials/Phase3/BookingSystemPhase3.zip
 
-The project contains **exactly six (6) intentional errors → 2 per file**, distributed across:
+The project contains **exactly six (6) intentional errors**, distributed across:
 
 ### Client-side files (browser)
 
