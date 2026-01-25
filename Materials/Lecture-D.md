@@ -86,7 +86,7 @@ When working with Node.js, **npm is one of the biggest security risks** because 
 
 ### 🔗 Connection to [CRA](https://www.european-cyber-resilience-act.com/)
 
-Although Web App runs in the browser, **its tooling relies heavily on npm**:
+Although Web App runs (e.g. React App) in the browser, **its tooling relies heavily on npm**:
 
 *   CRA installs **hundreds of transitive npm dependencies** (Webpack, Babel, dev servers, etc.).
 *   Any vulnerability in those dependencies affects the development environment.
