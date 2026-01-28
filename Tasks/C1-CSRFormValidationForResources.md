@@ -131,4 +131,4 @@ In the answer box (the C1 task), include:
   * Resource name + description show red/green correctly
   * frontend sends meaningful data / handles server responses sensibly
   * clear screenshot with environment proof
-  * GitHub repo contains `BookingSystem/` with full code and working changes
+  * GitHub repo contains `BookingSystem/Phase2` with full code and working changes
