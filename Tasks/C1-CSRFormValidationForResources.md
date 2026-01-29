@@ -17,7 +17,7 @@ Your goal is to improve **client-side + server-facing validation** for the Booki
 
 Download the Booking System Phase 2 code from GitHub:
 
-* 🔗 [https://github.com/vheikkiniemi/AdvWebDev2026K/tree/main/Materials/Phase2/app](https://github.com/vheikkiniemi/AdvWebDev2026K/tree/main/Materials/Phase2/app)
+* 🔗 [https://github.com/vheikkiniemi/AdvWebDev2026K/tree/main/Materials/Phase2](https://github.com/vheikkiniemi/AdvWebDev2026K/tree/main/Materials/Phase2)
 
 ---
 
