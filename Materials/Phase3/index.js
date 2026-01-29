@@ -65,7 +65,6 @@ app.post("/api/resources", (req, res) => {
 // --- Fallback 404 for unknown API routes ---
 app.use("/api", (req, res) => {
   res.status(404).json({ error: "Not found" });
-  res.json({ ok: true });
 });
 
 // --- Start server ---
