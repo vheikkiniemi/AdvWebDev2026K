@@ -187,9 +187,7 @@ Your form contains these fields:
 
 👉 The browser sends these as **form data** (usually `application/x-www-form-urlencoded`) unless you use JavaScript `fetch()` with JSON.
 
-So we’ll show **one common approaches**:
-
-✅ `curl` sending **JSON** (common for fetch-based apps / APIs)
+So we’ll show **one common approach** → `curl` sending **JSON** (common for fetch-based apps / APIs)
 
 ---
 
@@ -448,11 +446,11 @@ Think of it as a **security gate** in front of your route.
 
 ### Flow:
 
-1️⃣ JSON request arrives
-2️⃣ Express parses JSON (`express.json()`)
-3️⃣ Validation middleware runs
-4️⃣ ❌ Request rejected **or**
-5️⃣ ✅ Controller logic executes
+1️⃣ JSON request arrives  
+2️⃣ Express parses JSON (`express.json()`)  
+3️⃣ Validation middleware runs  
+4️⃣ ❌ Request rejected **or**  
+5️⃣ ✅ Controller logic executes  
 
 👉 Invalid data **never reaches** your database code.
 
