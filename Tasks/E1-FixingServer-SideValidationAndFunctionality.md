@@ -213,8 +213,33 @@ Then take **one screenshot** that clearly shows:
 
 📌 The screenshot must prove that **backend is running**, and that you can demonstrate **both outcomes** (blocked + stored) using `curl`. Below is an example of a screenshot.
 
-
 ![Booking system running](Phase4_1.png)
+
+
+💡 Commands used in the screenshot
+
+```bash
+curl -X POST http://localhost:5000/api/resources -H "Content-Type: application/json" -d '{
+"action": "create",
+"resourceName": "<>",
+"resourceDescription": "<script></script>",
+"resourceAvailable": true,
+"resourcePrice": 25.5,
+"resourcePriceUnit": "day"
+}'
+```
+---
+
+```bash
+curl -X POST http://localhost:5000/api/resources -H "Content-Type: application/json" -d '{
+"action": "create",
+"resourceName": "Room 01",
+"resourceDescription": "Room with cooking facilities",
+"resourceAvailable": true,
+"resourcePrice": 25.5,
+"resourcePriceUnit": "day"
+}'
+```
 
 ---
 
