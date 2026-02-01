@@ -102,14 +102,14 @@ index.js
 
 ## 🛠️ What You Must Do
 
-### 1️⃣ Deploy the system (mandatory)
+### 1️⃣ Deploy the system
 
 * Extract the ZIP file
 * Deploy the system using:
 
   * a **Virtual Machine** **or**
   * **Docker**
-* Follow the **Itslearning deployment video exactly**
+* Follow the **Itslearning deployment video**
 
 During this phase:
 
