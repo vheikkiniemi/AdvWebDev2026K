@@ -97,6 +97,9 @@ GRANT ALL PRIVILEGES ON DATABASE booking_db TO booking_dbuser;
 
 ```bash
 \c booking_db postgres
+```
+
+```bash
 GRANT ALL ON SCHEMA public TO booking_dbuser;
 ```
 
