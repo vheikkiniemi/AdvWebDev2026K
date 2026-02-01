@@ -614,9 +614,9 @@ curl -X POST http://localhost:5000/api/resources \
 }
 ```
 
-✔ Attack blocked
-✔ No database touched
-✔ No HTML stored
+✔ Attack blocked  
+✔ No database touched  
+✔ No HTML stored  
 
 ---
 
