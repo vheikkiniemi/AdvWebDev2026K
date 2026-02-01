@@ -1,3 +1,6 @@
+> [!NOTE]
+> The material was created with the help of ChatGPT and Copilot. 
+
 # 📘 Task D1: Debugging Client-Side **and** Server-Side Logic in the Booking System
 
 ## 🎯 Goal
