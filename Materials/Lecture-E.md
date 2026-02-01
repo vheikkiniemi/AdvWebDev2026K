@@ -402,9 +402,6 @@ curl -s -X POST "http://localhost:5000/api/resources" \
 
 > **If JSON reaches the server, the browser is already out of the picture.**
 
-Perfect — now everything lines up nicely: **browser → JSON → curl → Node → validation middleware** 🔐
-Below is **teaching-ready material** in English, with emojis, JSON-first, and directly compatible with your `/api/resources` endpoint.
-
 ---
 
 # 🟢 Node.js Server-side Validation with `express-validator`
