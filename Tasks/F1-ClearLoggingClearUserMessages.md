@@ -16,9 +16,18 @@ In this task you will improve **two kinds of messages** in the Booking System:
 Right now the system writes **unclear** log messages when:
 
 * a resource is created successfully
+
+![alt text](Phase5_1.png)
+
 * creation fails due to a **duplicate**
 
-And the UI messages shown to the user are also unclear for:
+![alt text](Phase5_2.png)
+
+* creation fails due to a validation
+
+![alt text](Phase5_3.png)
+
+And the UI messages shown to the user are also unclear for (see screenshots above):
 
 * success
 * duplicate
