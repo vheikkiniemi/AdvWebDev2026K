@@ -222,13 +222,13 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Is this only about starting the server?*
 
-✔️ Port listening
-✔️ Loading environment variables
-✔️ Starting the app
+✔️ Port listening  
+✔️ Loading environment variables  
+✔️ Starting the app  
 
-❌ Business logic
-❌ Routes
-❌ Validation
+❌ Business logic  
+❌ Routes  
+❌ Validation  
 
 ---
 
@@ -237,13 +237,13 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Is this Express configuration?*
 
-✔️ `express()` setup
-✔️ Middleware (`json`, `cors`, `static`)
-✔️ Mounting routes
+✔️ `express()` setup  
+✔️ Middleware (`json`, `cors`, `static`)  
+✔️ Mounting routes  
 
-❌ SQL queries
-❌ Validation rules
-❌ Business logic
+❌ SQL queries  
+❌ Validation rules  
+❌ Business logic  
 
 ---
 
@@ -252,14 +252,14 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Does this handle HTTP requests and responses?*
 
-✔️ `GET /api/resources`
-✔️ `POST /api/resources`
-✔️ Reading `req.params`, `req.body`
-✔️ Sending `res.json()`
+✔️ `GET /api/resources`  
+✔️ `POST /api/resources`  
+✔️ Reading `req.params`, `req.body`  
+✔️ Sending `res.json()`  
 
-❌ SQL
-❌ Validation rules
-❌ Reusable logic
+❌ SQL  
+❌ Validation rules  
+❌ Reusable logic  
 
 **Rule:** Routes should be *thin* 📄
 
@@ -270,14 +270,14 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Is this about checking or sanitizing user input?*
 
-✔️ Required fields
-✔️ Length limits
-✔️ XSS protection (`escape`, `trim`)
-✔️ express-validator chains
+✔️ Required fields  
+✔️ Length limits  
+✔️ XSS protection (`escape`, `trim`)  
+✔️ express-validator chains  
 
-❌ Database access
-❌ Logging
-❌ HTTP responses
+❌ Database access  
+❌ Logging  
+❌ HTTP responses  
 
 **Rule:** No validation logic inside routes ❌
 
@@ -288,13 +288,13 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Does this talk directly to the database?*
 
-✔️ Connection pool
-✔️ DB configuration
-✔️ Query helpers
+✔️ Connection pool  
+✔️ DB configuration  
+✔️ Query helpers  
 
-❌ Request handling
-❌ Validation
-❌ Formatting output
+❌ Request handling  
+❌ Validation  
+❌ Formatting output  
 
 **Rule:** DB code never touches `req` or `res` 🚫
 
@@ -305,13 +305,13 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Is this reusable logic used in multiple places?*
 
-✔️ Logging
-✔️ Business rules
-✔️ Data processing
-✔️ Coordinating DB + logic
+✔️ Logging  
+✔️ Business rules  
+✔️ Data processing  
+✔️ Coordinating DB + logic  
 
-❌ Express setup
-❌ Route definitions
+❌ Express setup  
+❌ Route definitions  
 
 **Rule:** Services can be tested without Express 🧪
 
@@ -322,13 +322,13 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Is this a small, pure helper function?*
 
-✔️ Timestamp helpers
-✔️ Formatters
-✔️ Random ID generators
+✔️ Timestamp helpers  
+✔️ Formatters  
+✔️ Random ID generators  
 
-❌ Business logic
-❌ DB access
-❌ Express code
+❌ Business logic  
+❌ DB access  
+❌ Express code  
 
 **Rule:** Utils should have **no side effects** ⚗️
 
@@ -339,14 +339,14 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Is this sent directly to the browser?*
 
-✔️ HTML
-✔️ CSS
-✔️ Client-side JS
-✔️ Images
+✔️ HTML  
+✔️ CSS  
+✔️ Client-side JS  
+✔️ Images  
 
-❌ Server logic
-❌ Validation
-❌ Secrets
+❌ Server logic  
+❌ Validation  
+❌ Secrets  
 
 ---
 
@@ -355,13 +355,13 @@ Use this checklist every time you add a new file. If you can answer **yes** to o
 **Ask:**
 👉 *Is this configuration or a secret?*
 
-✔️ DB credentials
-✔️ API keys
-✔️ Ports
+✔️ DB credentials  
+✔️ API keys  
+✔️ Ports  
 
-❌ Code
-❌ Logic
-❌ Anything committed to Git
+❌ Code  
+❌ Logic  
+❌ Anything committed to Git  
 
 ---
 
