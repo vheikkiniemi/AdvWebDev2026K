@@ -237,6 +237,8 @@ Use correct status codes:
 
 CRUD is not just about data → It directly impacts:
 
+---
+
 **🔐 Security**
 
 * Input validation
@@ -314,9 +316,11 @@ To build production-grade systems, we must consider:
 
 ## 1️⃣ API Standards
 
-### 🔹 REST (Representational State Transfer)
+**🔹 REST (Representational State Transfer)**
 
 REST is the dominant architectural style for web APIs.
+
+---
 
 Key principles:
 
@@ -324,6 +328,8 @@ Key principles:
 * HTTP methods define actions
 * Stateless communication
 * Structured responses (usually JSON)
+
+---
 
 Example:
 
@@ -339,7 +345,7 @@ REST is not a protocol → It is a **design philosophy**.
 
 ---
 
-### 🔹 OpenAPI Specification (OAS)
+**🔹 OpenAPI Specification (OAS)**
 
 The most widely adopted API documentation standard: [OpenAPI Specification](https://swagger.io/specification/)
 
@@ -370,7 +376,7 @@ This makes the API a **formal contract**.
 
 ---
 
-### 🔹 HTTP Standards
+**🔹 HTTP Standards**
 
 Defined by: [IETF → http ver 2.0](https://datatracker.ietf.org/doc/html/rfc7540)
 
@@ -398,7 +404,7 @@ API testing ensures:
 
 ### 🔹 Manual Testing
 
-#### Using curl
+**Using curl**
 
 ```bash
 curl -X POST http://localhost:3000/api/resources \
@@ -413,9 +419,7 @@ Good for:
 
 ---
 
-#### Using Postman
-
-[Postman](https://www.postman.com/)
+**Using [Postman](https://www.postman.com/)**
 
 Allows:
 
@@ -426,13 +430,13 @@ Allows:
 
 ---
 
-### 🔹 Automated Testing
+**🔹 Automated Testing**
 
 In Node.js, typically:
 
-* Supertest
-* Jest
-* Vitest
+* [Supertest](https://www.npmjs.com/package/supertest)
+* [Jest](https://jestjs.io/)
+* [Vitest](https://vitest.dev/)
 
 Example test idea:
 
@@ -445,7 +449,7 @@ Testing is verifying the **API contract**.
 
 ---
 
-### 🔹 Contract Testing
+**🔹 Contract Testing**
 
 Ensures:
 
@@ -473,9 +477,7 @@ Main categories:
 
 ## 4️⃣ Authentication (Who Are You?)
 
-Authentication verifies identity.
-
-Common methods:
+Authentication verifies identity. Common methods:
 
 ---
 
@@ -491,9 +493,7 @@ Good for:
 
 ---
 
-### 🔹 Token-Based Authentication (JWT)
-
-JSON Web Token
+### 🔹 Token-Based Authentication ([JSON Web Token](https://www.jwt.io/))
 
 Flow:
 
@@ -513,9 +513,7 @@ Advantages:
 
 ---
 
-### 🔹 OAuth 2.0
-
-OAuth 2.0
+### 🔹 [OAuth 2.0](https://oauth.net/2/)
 
 Used for:
 
@@ -613,9 +611,7 @@ Common issues include:
 * Excessive data exposure
 * Missing rate limiting
 
-These are highlighted in:
-
-OWASP API Security Top 10.
+These are highlighted in: [OWASP API Security Top 10](https://owasp.org/www-project-api-security/).
 
 ---
 
