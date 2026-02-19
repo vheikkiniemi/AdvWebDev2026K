@@ -33,7 +33,9 @@ In modern web applications, this usually means:
 
 Most modern web applications use a **REST-style API**.
 
-### Example Resource
+---
+
+**Example Resource**
 
 If we manage resources (e.g., rooms, equipment), the resource concept becomes the center of the API:
 
@@ -150,28 +152,32 @@ INSERT INTO resources (...)
 
 ## 6️⃣ Why CRUD + API Separation Matters
 
-### 🔹 Separation of Concerns
-
-Frontend:
+**Frontend:**
 
 * User experience
 * Immediate validation
 * Rendering
 
-Backend:
+---
+
+**Backend:**
 
 * Security
 * Validation
 * Business logic
 * Data integrity
 
-Database:
+---
+
+**Database:**
 
 * Persistence
 * Constraints
 * Transactions
 
-This layered design prevents:
+---
+
+**This layered design prevents:**
 
 * Direct database exposure
 * Trusting user input
@@ -181,9 +187,9 @@ This layered design prevents:
 
 ## 7️⃣ API Design Principles
 
-A well-designed API should be:
+A well-designed API should be: 
 
-### ✔ Resource-Oriented
+**✔ Resource-Oriented**
 
 Think in nouns, not verbs:
 
@@ -202,19 +208,19 @@ Not:
 
 ---
 
-### ✔ Predictable
+**✔ Predictable**
 
 HTTP method defines action.
 
 ---
 
-### ✔ Stateless
+**✔ Stateless**
 
 Each request contains everything needed.
 
 ---
 
-### ✔ Explicit About Errors
+**✔ Explicit About Errors**
 
 Use correct status codes:
 
@@ -231,14 +237,16 @@ Use correct status codes:
 
 CRUD is not just about data → It directly impacts:
 
-### 🔐 Security
+**🔐 Security**
 
 * Input validation
 * SQL injection prevention
 * Proper status codes
 * Role-based access control
 
-### 📊 Logging
+---
+
+**📊 Logging**
 
 Each CRUD action should produce log entries:
 
@@ -247,7 +255,9 @@ Each CRUD action should produce log entries:
 * When?
 * Was it successful?
 
-### ⚖ Data Integrity
+---
+
+**⚖ Data Integrity**
 
 * Unique constraints
 * Foreign keys
@@ -295,10 +305,10 @@ Modern APIs are not just endpoints. They are **contracts**, **security boundarie
 
 To build production-grade systems, we must consider:
 
-1️⃣ Standards
-2️⃣ Testing
-3️⃣ Authentication
-4️⃣ Authorization
+1️⃣ Standards  
+2️⃣ Testing  
+3️⃣ Authentication  
+4️⃣ Authorization  
 
 ---
 
