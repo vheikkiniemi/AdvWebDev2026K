@@ -16,7 +16,7 @@ CRUD represents the four fundamental operations of persistent data systems:
 
 CRUD is not a programming feature → It is a **data lifecycle model**.
 
-Every resource-based web system (like your Booking System) is fundamentally a CRUD system.
+Every resource-based web system (like our Booking System) is fundamentally a CRUD system.
 
 ---
 
@@ -82,11 +82,15 @@ The API acts as the **controlled gateway** between user actions and persistent d
 
 Let’s walk through a real scenario.
 
-### Step 1: User Action
+---
+
+**Step 1: User Action**
 
 User fills a form and submits.
 
-### Step 2: Client-side Validation
+---
+
+**Step 2: Client-side Validation**
 
 JavaScript checks:
 
@@ -94,7 +98,9 @@ JavaScript checks:
 * Format
 * Basic constraints
 
-### Step 3: HTTP Request
+---
+
+**Step 3: HTTP Request**
 
 ```http
 POST /api/resources
@@ -112,7 +118,9 @@ Body:
 }
 ```
 
-### Step 4: Server-side Validation
+---
+
+**Step 4: Server-side Validation**
 
 Backend checks:
 
@@ -121,13 +129,17 @@ Backend checks:
 * Duplicates
 * Data types
 
-### Step 5: Database Action
+---
+
+**Step 5: Database Action**
 
 ```sql
 INSERT INTO resources (...)
 ```
 
-### Step 6: HTTP Response
+---
+
+**Step 6: HTTP Response**
 
 * 201 Created (success)
 * 400 Bad Request (validation error)
