@@ -611,7 +611,7 @@ Common issues include:
 * Excessive data exposure
 * Missing rate limiting
 
-These are highlighted in: [OWASP API Security Top 10](https://owasp.org/www-project-api-security/).
+These are highlighted in: [OWASP API Security Top 10](https://owasp.org/API-Security/editions/2023/en/0x00-header/).
 
 ---
 
