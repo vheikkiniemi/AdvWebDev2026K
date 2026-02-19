@@ -169,7 +169,7 @@ Update user-visible messages so they are clear and helpful:
 * Must clearly tell the user that input was invalid
 * Should encourage fixing the fields and trying again
 
-⚠️ **Important note for this task **
+⚠️ **Important note for this task**
 
 * For testing purposes, **frontend guarantees are intentionally not fully aligned with backend rules**.
 * So you must rely on **real server responses** and handle errors properly.
