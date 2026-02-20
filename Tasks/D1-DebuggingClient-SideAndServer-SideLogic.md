@@ -34,7 +34,7 @@ The project contains **at least six (6) errors**, distributed across:
 
 Additionally, Itslearning includes:
 
-* 🎥 **A reference video** showing how the system **should behave when fully working**
+* 🎥 **A reference video (In itslearning)** showing how the system **should behave when fully working**
 
 ---
 
