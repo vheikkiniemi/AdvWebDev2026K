@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Booking System</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: "#e10e49",
+                            light: "#ffffff",
+                            dark: "#1e1e1e",
+                            blue: "#263f6a",
+                            green: "#284e36",
+                            orange: "#e37222",
+                            rose: "#c24d52",
+                        }
+                    },
+                    boxShadow: {
+                        soft: "0 8px 40px rgba(0, 0, 0, 0.45)",
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="js/register.js" defer></script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-brand-light text-brand-dark">
+    <header class="sticky top-0 z-40 bg-brand-dark text-white shadow-soft">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex h-16 items-center justify-between">
+                <a href="/" class="flex items-center gap-3 flex-1">
+                    <img src="logo.svg" alt="Booking System" class="h-10 w-10">
+                    <div class="leading-tight">
+                        <span class="block text-sm font-semibold">
+                            Booking System
+                        </span>
+                        <span class="block text-xs text-white/70">
+                            Secure resource booking
+                        </span>
+                    </div>
+                </a>
+                <nav class="flex items-center gap-3">
+                    <a href="/resources" data-auth="user"
+                        class="res-link rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/10 w-40 text-center cursor-not-allowed pointer-events-none">
+                        Resources
+                    </a>
+                    <a href="/reservations" data-auth="user"
+                        class="res-link rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/10 w-40 text-center cursor-not-allowed pointer-events-none">
+                        Reservations
+                    </a>
+                    <a href="/register" data-auth="guest" class="auth-link rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/10 w-40 text-center">
+                        Register
+                    </a>
+                    <a href="/login" data-auth="guest" class="auth-link rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/10 w-40 text-center">
+                        Sign in
+                    </a>
+                    <button onclick="logout()" data-auth="user" class="auth-link hidden rounded-xl bg-brand-primary px-4 py-2 text-sm font-semibold text-white w-40 text-center">
+                        Sign out
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-6 flex-grow">
+        <section class="py-16">
+            <div class="grid gap-8 lg:grid-cols-12 items-start">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="rounded-3xl bg-white p-8 shadow-soft">
+                        <span
+                            class="inline-flex items-center gap-2 rounded-full bg-brand-green/10 px-4 py-1 text-sm font-semibold text-brand-green">
+                            Account onboarding
+                        </span>
+
+                        <h1 class="mt-4 text-4xl font-semibold leading-tight">
+                            Create your Booking System account
+                        </h1>
+
+                        <p class="mt-4 text-base text-black/70">
+                            Register to manage bookings, view your reservations, and access role-based features.
+                        </p>
+
+                        <div class="mt-8 space-y-4 text-sm text-black/70">
+                            <div class="rounded-2xl border border-black/10 bg-black/5 p-4">
+                                <p class="font-semibold text-black/80">Reserver</p>
+                                <p class="mt-1">Use the system for normal booking and personal reservation management.</p>
+                            </div>
+                            <div class="rounded-2xl border border-black/10 bg-black/5 p-4">
+                                <p class="font-semibold text-black/80">Manager</p>
+                                <p class="mt-1">May receive extended permissions based on system configuration.</p>
+                            </div>
+                            <div class="rounded-2xl border border-black/10 bg-black/5 p-4">
+                                <p class="font-semibold text-black/80">Administrator</p>
+                                <p class="mt-1">Controls the entire system. Not available during registration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="rounded-3xl bg-white p-8 shadow-soft">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <h2 class="text-xl font-semibold">Register</h2>
+                                <p class="mt-1 text-sm text-black/60">Fill in your details to create a new account.</p>
+                            </div>
+                            <span class="rounded-full bg-brand-primary/10 px-3 py-1 text-xs font-semibold text-brand-primary">
+                                New user
+                            </span>
+                        </div>
+
+                        <div id="registerMessage" class="hidden mt-6 rounded-2xl border px-4 py-3 text-sm" role="alert"></div>
+
+                        <form class="mt-8 space-y-6" id="registerForm" method="post" action="/register" novalidate>
+                            <div class="grid gap-6 sm:grid-cols-2">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-semibold">First name</label>
+                                    <input id="firstName" name="firstName" type="text" autocomplete="given-name"
+                                        placeholder="John"
+                                        class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none transition-all duration-200 ease-out focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30" />
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-semibold">Last name</label>
+                                    <input id="lastName" name="lastName" type="text" autocomplete="family-name"
+                                        placeholder="Doe"
+                                        class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none transition-all duration-200 ease-out focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-semibold">Email address</label>
+                                <input id="email" name="email" type="email" autocomplete="email"
+                                    placeholder="name@example.com"
+                                    class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none transition-all duration-200 ease-out focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30" />
+                            </div>
+
+                            <div class="grid gap-6 sm:grid-cols-2">
+                                <div>
+                                    <label for="password" class="block text-sm font-semibold">Password</label>
+                                    <input id="password" name="password" type="password" autocomplete="new-password"
+                                        placeholder="Create a password"
+                                        class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none transition-all duration-200 ease-out focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30" />
+                                </div>
+                                <div>
+                                    <label for="confirmPassword" class="block text-sm font-semibold">Confirm password</label>
+                                    <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password"
+                                        placeholder="Repeat the password"
+                                        class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none transition-all duration-200 ease-out focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="block text-sm font-semibold">Role</span>
+                                <div class="mt-3 flex flex-wrap gap-6">
+                                    <label class="inline-flex items-center gap-2 cursor-pointer">
+                                        <input type="radio" name="role" value="reserver" checked>
+                                        <span class="text-sm">Reserver</span>
+                                    </label>
+                                    <label class="inline-flex items-center gap-2 cursor-pointer">
+                                        <input type="radio" name="role" value="manager">
+                                        <span class="text-sm">Manager</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="rounded-2xl border border-black/10 bg-black/5 p-4">
+                                <label class="inline-flex items-start gap-3 cursor-pointer select-none">
+                                    <input type="checkbox" id="acceptTerms" name="acceptTerms"
+                                        class="mt-1 h-4 w-4 rounded border-black/20 text-brand-primary focus:ring-brand-primary/40" />
+                                    <span class="text-sm text-black/70">
+                                        I accept the <a href="/terms" class="font-semibold text-brand-blue hover:underline">Terms</a>
+                                        and <a href="/privacypolicy" class="font-semibold text-brand-blue hover:underline">Privacy Policy</a>.
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="grid gap-4 w-full grid-cols-1 sm:grid-cols-2">
+                                <button id="registerButton" type="submit"
+                                    class="w-full rounded-2xl bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-soft hover:bg-brand-dark/80 transition-all duration-200 ease-out">
+                                    Register
+                                </button>
+                                <a href="/login"
+                                    class="w-full rounded-2xl border border-brand-dark px-6 py-3 text-sm font-semibold text-center hover:bg-brand-dark/80 hover:text-white transition-all duration-200 ease-out">
+                                    Back to sign in
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark text-white">
+        <div class="mx-auto max-w-7xl px-6 py-10">
+            <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="logo.svg" alt="Booking System" class="h-8 w-8 opacity-90">
+                    <div class="leading-tight">
+                        <p class="text-sm font-semibold">Booking System</p>
+                        <p class="text-xs text-white/60">Secure resource booking</p>
+                    </div>
+                </div>
+
+                <nav class="flex items-center gap-3 text-sm text-white/70">
+                    <a href="/privacypolicy"
+                        class="rounded-full px-3 py-1 hover:bg-white/10 hover:text-white transition cursor-not-allowed pointer-events-none">Privacy</a>
+                    <span class="text-white/30">|</span>
+                    <a href="/terms"
+                        class="rounded-full px-3 py-1 hover:bg-white/10 hover:text-white transition cursor-not-allowed pointer-events-none">Terms</a>
+                    <span class="text-white/30">|</span>
+                    <a href="/cookiepolicy"
+                        class="rounded-full px-3 py-1 hover:bg-white/10 hover:text-white transition cursor-not-allowed pointer-events-none">Cookies</a>
+                </nav>
+            </div>
+
+            <div class="mt-8 border-t border-white/10 pt-4 text-xs text-white/50">
+                © <span id="year"></span> Ville Heikkiniemi. All rights reserved. Source code licensed under the MIT License.
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
