@@ -398,3 +398,333 @@ Roles → Permission grouping
 ```
 
 ---
+
+# 🗂 Node.js Project Structure, Authentication, and Authorization
+
+In our project, the folder structure already shows an important architectural idea:
+
+* some files are **publicly accessible**
+* some pages are **served through backend routes**
+* authentication and authorization are handled in the **backend**
+* the browser UI and the API have **different responsibilities**
+
+A simplified view of your project looks like this:
+
+```text
+project/
+│
+├─ server.js
+├─ package.json
+├─ Dockerfile
+├─ docker-compose.yml
+├─ .env
+│
+├─ middleware/
+│   └─ auth.middleware.js
+│
+├─ public/
+│   ├─ js/
+│   │   ├─ auth-ui.js
+│   │   ├─ form.js
+│   │   ├─ index.js
+│   │   ├─ login.js
+│   │   ├─ register.js
+│   │   └─ resources.js
+│   ├─ index.html
+│   ├─ login.html
+│   ├─ register.html
+│   └─ logo.svg
+│
+├─ src/
+│   ├─ app.js
+│   ├─ db/
+│   │   └─ pool.js
+│   ├─ routes/
+│   │   ├─ auth.routes.js
+│   │   ├─ reservations.routes.js
+│   │   └─ resources.routes.js
+│   ├─ services/
+│   │   └─ log.service.js
+│   ├─ utils/
+│   │   └─ timestamp.js
+│   ├─ validators/
+│   │   ├─ auth.validators.js
+│   │   └─ resource.validators.js
+│   └─ views/
+│       └─ resources.html
+```
+
+---
+
+## 1️⃣ What this structure means
+
+Our project separates the application into two main sides:
+
+---
+
+**Public frontend side**
+
+The `public/` folder contains files that can be served directly to the browser.
+
+Examples:
+
+* `index.html`
+* `login.html`
+* `register.html`
+* browser-side JavaScript in `public/js/`
+* static assets such as `logo.svg`
+
+These files are typically available without authentication.
+
+---
+
+**Backend-controlled side**
+
+The `src/` folder contains the application logic:
+
+* route handlers
+* database access
+* services
+* validators
+* protected views
+
+This is where authentication and authorization are enforced.
+
+---
+
+## 2️⃣ The role of `public/`
+
+The `public/` folder is for **static files**. These files are usually exposed with Express like this:
+
+```javascript
+app.use(express.static("public"));
+```
+
+That means the browser can request them directly. Examples:
+
+* `/index.html`
+* `/login.html`
+* `/register.html`
+* `/js/resources.js`
+
+So in our project, pages such as `login.html` and `register.html` are part of the **public entry layer** of the application. They are meant to be reachable before the user is authenticated.
+
+---
+
+## 3️⃣ The role of `src/views/`
+
+In our project, `resources.html` is inside:
+
+```text
+src/views/resources.html
+```
+
+This is a very important design choice. Unlike files in `public/`, this page is **not meant to be directly exposed as a static file**. Instead, it should be sent through a backend route, for example:
+
+```javascript
+app.get("/resources", requireAuth, (req, res) => {
+  res.sendFile(path.join(__dirname, "views/resources.html"));
+});
+```
+
+This allows the backend to decide:
+
+* is the user authenticated?
+* is the user allowed to access this page?
+* should access be denied?
+
+---
+
+So the key difference is this:
+
+```text
+public/       → directly accessible static files
+src/views/    → backend-controlled pages
+```
+
+That distinction is very useful to understand.
+
+---
+
+## 4️⃣ Authentication in this structure
+
+Authentication answers:
+
+> Who is the user?
+
+In our project, authentication logic belongs mainly to:
+
+```text
+src/routes/auth.routes.js
+middleware/auth.middleware.js
+```
+
+A typical flow is:
+
+1. User opens `login.html` from `public/`
+2. User submits credentials to a backend route such as:
+
+    ```text
+    POST /api/auth/login
+    ```
+
+3. `auth.routes.js` verifies the credentials
+4. The server creates an authenticated user state
+
+   * JWT token
+
+5. Future requests can be checked with `auth.middleware.js`
+
+So the login page itself is public, but the actual authentication decision is made in the backend.
+
+---
+
+## 5️⃣ Authorization in this structure
+
+Authorization answers:
+
+> What is the user allowed to do?
+
+This happens after authentication. In our project, authorization can be enforced in:
+
+* `middleware/auth.middleware.js`
+* route files such as:
+
+  * `resources.routes.js`
+  * `reservations.routes.js`
+
+For example:
+
+* a guest may access `index.html`
+* an authenticated user may access `/resources`
+* only an admin may create, update, or delete resources
+* a reserver may view resources and create reservations, but not manage everything
+
+So authentication identifies the user, and authorization checks the user’s permissions (`based on JWT token`).
+
+---
+
+## 6️⃣ Why `public/login.html` and `src/views/resources.html` are different
+
+This is one of the most important lessons in our project.
+
+---
+
+`public/login.html` → This page is meant to be open.
+
+**Why?**
+
+Because the user must be able to reach the login form before logging in. So it makes sense to keep it in `public/`.
+
+---
+
+`src/views/resources.html` → This page represents protected application content.
+
+**Why?**
+
+Because access to resources should depend on authentication and possibly on role. So it makes sense to keep it outside `public/` and serve it only through a backend route.
+
+---
+
+## 7️⃣ Role-based thinking in this project
+
+Our project already fits well with **role-based authorization**. Typical roles might be:
+
+* guest
+* reserver
+* admin
+
+---
+
+Example logic:
+
+```text
+Guest
+→ can open public pages
+
+Authenticated reserver
+→ can open resources page
+→ can create reservations
+
+Admin
+→ can manage resources
+→ can manage reservations
+```
+
+This means the backend should not trust the frontend alone. Even if buttons are hidden in the browser, the real protection must still happen in backend routes and middleware. **That is a key security principle.**
+
+---
+
+## 8️⃣ How we should think about this architecture
+
+A good mental model is:
+
+```text
+public/
+→ what the browser can load directly
+
+src/views/
+→ pages the server sends only after checks
+
+src/routes/
+→ endpoints that process requests
+
+middleware/
+→ authentication and authorization checks
+
+validators/
+→ input validation
+
+db/
+→ database access
+```
+
+---
+
+## 9️⃣ A simple project-specific explanation
+
+In our project, the user journey may look like this:
+
+```text
+1. Open /login.html from public/
+2. Submit login form to auth route
+3. Server verifies credentials
+4. Server stores authenticated state
+5. User requests /resources
+6. Backend checks authentication in middleware
+7. If allowed, server sends src/views/resources.html
+8. Browser-side JS then calls protected API routes
+```
+
+This shows clearly that:
+
+* **public files start the interaction**
+* **backend routes protect the application**
+* **middleware connects authentication and authorization to real access control**
+
+---
+
+## ✅ Rule of thumb for our project
+
+```text
+public/
+= open frontend files
+
+src/views/
+= protected pages sent by backend routes
+
+auth.routes.js
+= login/register logic
+
+auth.middleware.js
+= access checks
+
+resources.routes.js / reservations.routes.js
+= protected application actions
+
+frontend hiding buttons
+≠ real security
+
+backend authorization
+= real security
+```
