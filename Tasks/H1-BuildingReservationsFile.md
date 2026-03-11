@@ -211,8 +211,8 @@ Submit:
 
 1. 📸 **Screenshots**
 
-  * the site open in your browser
-  * the **environment evidence** (VM or Docker) visible
+   * the site open in your browser
+   * the **environment evidence** (VM or Docker) visible
 
 2. 🔗 **GitHub link**
 
