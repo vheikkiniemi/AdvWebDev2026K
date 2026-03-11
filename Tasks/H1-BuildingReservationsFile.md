@@ -211,12 +211,12 @@ Submit:
 
 1. 📸 **Screenshots**
 
-* **Part 1:** 1 database screenshot (logs table with descriptive messages)
-* **Part 2:** 3 UI screenshots (success + duplicate + validation error)
+  * the site open in your browser
+  * the **environment evidence** (VM or Docker) visible
 
 2. 🔗 **GitHub link**
 
-   * pointing to `BookingSystem/Phase7`
+   * Pointing to `BookingSystem/Phase7`
 
 ---
 
