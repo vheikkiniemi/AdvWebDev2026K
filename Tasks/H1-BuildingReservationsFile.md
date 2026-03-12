@@ -220,7 +220,7 @@ Submit:
 
 ---
 
-## 🧪 Grading (0–2 points)
+## 🧪 Grading (0–3 points)
 
 * **0 points:** The page does not exist, or it does not work.
 * **1 point:** A reservation can be created from the page and saved into the database.
