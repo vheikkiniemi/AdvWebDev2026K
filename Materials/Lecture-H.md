@@ -408,7 +408,7 @@ In our project, the folder structure already shows an important architectural id
 * authentication and authorization are handled in the **backend**
 * the browser UI and the API have **different responsibilities**
 
-A simplified view of your project looks like this:
+A simplified view of our project looks like this:
 
 ```text
 project/

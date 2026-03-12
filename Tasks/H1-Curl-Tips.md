@@ -124,17 +124,29 @@ API works with curl but not browser → frontend issue
 
 # 👤 Create a User with `curl`
 
-Example command:
+Example commands:
 
 ```bash
 curl -X POST http://localhost:3000/api/auth/register \
 -H "Content-Type: application/json" \
 -d '{
   "firstName": "Alice",
-  "lastName": "Example",
-  "email": "alice@example.com",
+  "lastName": "Doe",
+  "email": "alice@doe.com",
   "password": "Password123!",
   "role": "reserver"
+}'
+```
+
+```bash
+curl -X POST http://localhost:3000/api/auth/register \
+-H "Content-Type: application/json" \
+-d '{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@doe.com",
+  "password": "Password123!",
+  "role": "manager"
 }'
 ```
 
