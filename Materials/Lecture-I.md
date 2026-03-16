@@ -760,9 +760,9 @@ This setup is:
 
 Later we can extend it to:
 
-* React container  
-* Node/Express backend
-* PostgreSQL database
+✔ React container    
+✔ Node/Express backend  
+✔ PostgreSQL database  
 
 ---
 
