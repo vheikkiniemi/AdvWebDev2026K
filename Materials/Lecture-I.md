@@ -118,9 +118,7 @@ After this exercise we should be able to:
 
 ## 1️⃣ Create the React Project
 
-First we create the React application **normally**.
-
-### Command
+First we create the React application **normally** using command.
 
 ```bash
 npm create vite@latest final-project -- --template react
