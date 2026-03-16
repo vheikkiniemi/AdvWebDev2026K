@@ -126,30 +126,12 @@ First we create the React application **normally**.
 npm create vite@latest final-project -- --template react
 ```
 
-When (and if) prompted select (or something similar):
-
-**Framework**
+**When (and if) prompted select:**
 
 ```
-React
-```
-
-**Variant**
-
-```
-JavaScript
-```
-
-Then move to the project folder:
-
-```bash
-cd react-app
-```
-
-Install dependencies:
-
-```bash
-npm install
+◆  Install with npm and start now?
+│  ● Yes / ○ No
+└
 ```
 
 ---
