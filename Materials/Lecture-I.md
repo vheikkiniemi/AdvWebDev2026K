@@ -7,13 +7,9 @@
 
 <https://react.dev/> is an open‑source JavaScript library developed by Facebook (now Meta). It is designed for building **reusable, efficient, and reactive UI components** for modern web applications.
 
-***
-
 ## 🕰️ Brief History of React
 
 React was first released in **2013**, originally created for Facebook’s internal needs to solve complex user interface challenges. It quickly gained popularity, and today it is widely used in both startups and major tech companies.
-
-***
 
 ## 🔗 How React Connects to Other Technologies
 
@@ -24,8 +20,6 @@ React focuses exclusively on the UI layer. It is often used together with other 
 *   **Next.js** – SSR (server-side rendering) and SSG (static site generation)
 *   **TypeScript** – type safety and enhanced development experience
 
-***
-
 ## 🚀 Real‑World Use Cases
 
 Many well‑known services rely on React:
@@ -35,31 +29,25 @@ Many well‑known services rely on React:
 *   **Netflix** – improved performance and developer tooling
 *   **Airbnb** – modular UI built from reusable components
 
-***
-
 ## ⚖️ Pros and Cons of React
 
-### ✅ Pros
+**✅ Pros**
 
 *  **Fast & efficient**: Virtual DOM enables optimized UI updates
 *  **Component-based architecture**: Clean, modular structure
 *  **Large community**: Many libraries, tools, and tutorials
 *  **Great developer experience**: Hot reload, dev tools
 
-### ❌ Cons
+**❌ Cons**
 
 *  **Steeper learning curve**: JSX, hooks, and state management
 *  **SEO challenges**: Requires SSR for optimal search visibility
 *  **Rapid evolution**: Features change frequently
 
-***
-
 ## 📚 Additional Resources
 
 *   <https://fullstackopen.com/en/>
 *   <https://fullstackopen.com/en/part1/introduction_to_react>
-
-***
 
 # ⚡Introduction to Vite
 
@@ -73,8 +61,6 @@ Many well‑known services rely on React:
 
 Vite was first released in **2020**. Its purpose was to overcome performance bottlenecks found in older bundlers like Webpack—especially slow server startup and rebuild times in large projects. Thanks to its innovative use of **native ES modules** in the browser and **esbuild** for fast preprocessing, Vite quickly became one of the most popular tools in modern web development.
 
-***
-
 ## 🔗 How Vite Connects to Other Technologies
 
 Vite focuses on the **development and build process**, not the UI itself. It is commonly used together with:
@@ -87,8 +73,6 @@ Vite focuses on the **development and build process**, not the UI itself. It is 
 
 Vite is *not* a framework, it is the tool that powers your frontend development.
 
-***
-
 ## 🚀 Real‑World Use Cases
 
 Vite is widely used in modern web‑based projects and tooling:
@@ -99,11 +83,9 @@ Vite is widely used in modern web‑based projects and tooling:
 *   **Modern design systems** – for rapid component development
 *   **Educational projects** – ideal for teaching due to its simplicity and speed
 
-***
-
 ## ⚖️ Pros and Cons of Vite
 
-### ✅ Pros
+**✅ Pros**
 
 *   **Blazing-fast development server**: Uses native ES modules
 *   **Instant HMR**: Updates browser changes almost instantly
@@ -111,13 +93,11 @@ Vite is widely used in modern web‑based projects and tooling:
 *   **Simple configuration**: Minimal setup, modern defaults
 *   **Framework‑agnostic**: Works with React, Vue, Svelte, Lit, and more
 
-### ❌ Cons
+**❌ Cons**
 
 *   **Requires modern Node.js versions**: Old versions are not supported
 *   **Rollup complexity**: Custom configurations may need Rollup knowledge
 *   **Not ideal for legacy browsers**: ES module dependency
-
-***
 
 ## 📚 Additional Resources
 
@@ -125,16 +105,12 @@ Vite is widely used in modern web‑based projects and tooling:
 *   <https://vitejs.dev/guide/why.html>
 
 
----
-
 # ⭐ React and Vite: How They Work Together
 
 **React** is a JavaScript library for building user interfaces.  
 **Vite** is a modern frontend build tool and dev server.
 
 They serve different purposes but work extremely well together.
-
-***
 
 ## ⚙️ What React does
 
@@ -153,8 +129,6 @@ React **does NOT** handle:
 
 That's where Vite comes in.
 
-***
-
 ## ⚡ What Vite does
 
 Vite provides:
@@ -165,8 +139,6 @@ Vite provides:
 *   Production builds using Rollup under the hood
 
 Vite replaces older tools like **Webpack** or **Create React App (CRA)**.
-
-***
 
 ## 🤝 How React and Vite fit together
 
@@ -188,8 +160,6 @@ npm create vite@latest my-app --template react
 *   Defines the UI
 *   Manages component logic
 *   Renders the application
-
-***
 
 ## 🚀 Why React + Vite is so popular
 
@@ -214,8 +184,6 @@ Because it gives you:
 
 **React builds the UI.**  
 **Vite powers the development and build process.**
-
----
 
 # 🐳 React in Docker – First Setup
 
