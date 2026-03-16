@@ -77,9 +77,9 @@ In this first step, we will create a **React application** and run it inside a *
 
 The purpose is to learn:
 
-* how a **React project** is structured
-* how **Docker provides a shared development environment**
-* how to run the **same project consistently on different computers**
+✔ how a **React project** is structured
+✔ how **Docker provides a shared development environment**
+✔ how to run the **same project consistently on different computers**
 
 ---
 
