@@ -41,16 +41,16 @@ Many well‑known services rely on React:
 
 ### ✅ Pros
 
-*   ⚡ **Fast & efficient**: Virtual DOM enables optimized UI updates
-*   🧩 **Component-based architecture**: Clean, modular structure
-*   🌍 **Large community**: Many libraries, tools, and tutorials
-*   💻 **Great developer experience**: Hot reload, dev tools
+*  **Fast & efficient**: Virtual DOM enables optimized UI updates
+*  **Component-based architecture**: Clean, modular structure
+*  **Large community**: Many libraries, tools, and tutorials
+*  **Great developer experience**: Hot reload, dev tools
 
 ### ❌ Cons
 
-*   📘 **Steeper learning curve**: JSX, hooks, and state management
-*   🔍 **SEO challenges**: Requires SSR for optimal search visibility
-*   🔄 **Rapid evolution**: Features change frequently
+*  **Steeper learning curve**: JSX, hooks, and state management
+*  **SEO challenges**: Requires SSR for optimal search visibility
+*  **Rapid evolution**: Features change frequently
 
 ***
 
@@ -68,14 +68,12 @@ Many well‑known services rely on React:
 
 ## 🎯 Goal
 
-In this first step, we will create a **React application** and run it inside a **Docker container**.
+In this first step, we will create a **React application** and run it inside a **Docker container**. At this stage we are **not** adding:
 
-At this stage we are **not** adding:
-
-❌ backend
-❌ database
-❌ authentication
-❌ API calls
+❌ backend  
+❌ database  
+❌ authentication  
+❌ API calls  
 
 The purpose is to learn:
 
@@ -85,42 +83,40 @@ The purpose is to learn:
 
 ---
 
-# 🤔 Why are we doing this?
+## 🤔 Why are we doing this?
 
-When many developers work on the same project, local environments often differ.
+When many developers work on the same project, local environments often differ. Typical problems include:
 
-Typical problems include:
-
-⚠️ different **Node.js versions**
-⚠️ npm installation issues
-⚠️ dependency conflicts
-⚠️ Windows / Linux / macOS differences
-⚠️ the classic *“it works on my machine”* problem
+⚠️ different **Node.js versions**  
+⚠️ npm installation issues  
+⚠️ dependency conflicts  
+⚠️ Windows / Linux / macOS differences  
+⚠️ the classic *“it works on my machine”* problem  
 
 Docker solves this by giving everyone the **same runtime environment**:
 
-✔ same Node version
-✔ same operating system inside the container
-✔ same project startup process
+✔ same Node version  
+✔ same operating system inside the container  
+✔ same project startup process  
 
 This makes **development and troubleshooting easier**.
 
 ---
 
-# 🎓 Learning Objectives
+## 🎓 Learning Objectives
 
 After this exercise we should be able to:
 
-✔ create a React project with **Vite**
-✔ explain the purpose of **Docker in development**
-✔ create a **Dockerfile**
-✔ create a **docker-compose.yml** file
-✔ run a React app inside a **container**
-✔ understand the **basic project structure**
+✔ create a React project with **Vite**  
+✔ explain the purpose of **Docker in development**  
+✔ create a **Dockerfile**  
+✔ create a **docker-compose.yml** file  
+✔ run a React app inside a **container**  
+✔ understand the **basic project structure**  
 
 ---
 
-# 1️⃣ Step 1 – Create the React Project
+## 1️⃣ Create the React Project
 
 First we create the React application **normally**.
 
@@ -130,7 +126,7 @@ First we create the React application **normally**.
 npm create vite@latest final-project -- --template react
 ```
 
-When prompted select:
+When (and if) prompted select (or something similar):
 
 **Framework**
 
@@ -158,7 +154,7 @@ npm install
 
 ---
 
-## 💡 Why do we do this first?
+### 💡 Why do we do this first?
 
 Creating the React app first helps us understand:
 
@@ -172,7 +168,7 @@ src/App.jsx
 src/main.jsx
 ```
 
-If we start with Docker immediately, beginners often mix together:
+If we start with Docker immediately, we can mix together:
 
 * React problems
 * Docker problems
@@ -180,13 +176,13 @@ If we start with Docker immediately, beginners often mix together:
 
 So the process is simpler:
 
-1️⃣ Create the app
-2️⃣ Understand the app
-3️⃣ Containerize the app
+1️⃣ Create the app  
+2️⃣ Understand the app  
+3️⃣ Containerize the app  
 
 ---
 
-# 2️⃣ Step 2 – Test That React Works
+## 2️⃣ Test That React Works
 
 Run:
 
@@ -204,13 +200,13 @@ You should see the **default Vite + React page**.
 
 ---
 
-## 💡 Why is this important?
+### 💡 Why is this important?
 
 Before adding Docker we must confirm:
 
-✔ the React project works
-✔ dependencies installed correctly
-✔ development server runs
+✔ the React project works  
+✔ dependencies installed correctly  
+✔ development server runs  
 
 A good engineering rule:
 
@@ -218,7 +214,7 @@ A good engineering rule:
 
 ---
 
-# 3️⃣ Step 3 – Explore the Project Structure
+## 3️⃣ Explore the Project Structure
 
 A typical **Vite + React project** looks like this:
 
@@ -237,9 +233,9 @@ react-app/
 
 ---
 
-## 📂 Important Files
+### 📂 Important Files
 
-### 📦 `package.json`
+#### 📦 `package.json`
 
 Contains:
 
@@ -249,29 +245,27 @@ Contains:
 
 ---
 
-### ⚛ `src/main.jsx`
+#### ⚛ `src/main.jsx`
 
 Entry point of the React application.
 
 ---
 
-### 🧩 `src/App.jsx`
+#### 🧩 `src/App.jsx`
 
 Main React component rendered first.
 
 ---
 
-### 🌐 `index.html`
+#### 🌐 `index.html`
 
 The HTML page where React is mounted.
 
 ---
 
-## 💡 Why is this important?
+### 💡 Why is this important?
 
-Docker **does not replace understanding the project**.
-
-Docker only provides the **runtime environment**.
+Docker **does not replace understanding the project**. Docker only provides the **runtime environment**.
 
 We still must understand:
 
@@ -281,19 +275,17 @@ We still must understand:
 
 ---
 
-# 4️⃣ Step 4 – Add Docker Support
+## 4️⃣ Add Docker Support
 
-Now we add Docker files to the root of the project.
+Now we add Docker files to the root of the project. We will create:
 
-We will create:
-
-📄 `Dockerfile`
-📄 `docker-compose.yml`
-📄 `.dockerignore`
+📄 `Dockerfile` → 5️⃣
+📄 `docker-compose.yml` → 6️⃣
+📄 `.dockerignore` → 7️⃣
 
 ---
 
-# 5️⃣ Step 5 – Create the Dockerfile
+## 5️⃣ Create the Dockerfile
 
 Create:
 
@@ -316,9 +308,9 @@ CMD ["npm", "run", "dev", "--", "--host"]
 
 ---
 
-## 🔍 What does this do?
+### 🔍 What does this do?
 
-### 🧱 `FROM node:24-alpine`
+#### 🧱 `FROM node:24-alpine`
 
 Uses Node.js version 24.
 
@@ -329,11 +321,9 @@ Why:
 
 ---
 
-### 📁 `WORKDIR /app`
+#### 📁 `WORKDIR /app`
 
-Sets the working directory inside the container.
-
-All project files are handled in:
+Sets the working directory inside the container. All project files are handled in:
 
 ```
 /app
@@ -341,7 +331,7 @@ All project files are handled in:
 
 ---
 
-### 📄 `COPY package*.json ./`
+#### 📄 `COPY package*.json ./`
 
 Copies dependency files first.
 
@@ -351,7 +341,7 @@ Docker can **cache dependency installation**.
 
 ---
 
-### 📦 `RUN npm install`
+#### 📦 `RUN npm install`
 
 Installs dependencies inside the container.
 
@@ -359,19 +349,19 @@ Dependencies belong to the **container environment**.
 
 ---
 
-### 📄 `COPY . .`
+#### 📄 `COPY . .`
 
 Copies the rest of the project files.
 
 ---
 
-### 🔌 `EXPOSE 5173`
+#### 🔌 `EXPOSE 5173`
 
 Documents the port used by Vite.
 
 ---
 
-### ▶ `CMD ["npm","run","dev","--","--host"]`
+#### ▶ `CMD ["npm","run","dev","--","--host"]`
 
 Starts the development server.
 
@@ -379,7 +369,7 @@ Starts the development server.
 
 ---
 
-# 6️⃣ Step 6 – Create docker-compose.yml
+## 6️⃣ Create docker-compose.yml
 
 Create:
 
@@ -391,7 +381,6 @@ Add:
 
 ```yaml
 name: advanced-web-final-project-phase1
-
 services:
   react-app:
     build: .
@@ -405,21 +394,21 @@ services:
 
 ---
 
-## 🔍 What does this do?
+### 🔍 What does this do?
 
-### 📦 `build: .`
+#### 📦 `build: .`
 
 Builds the Docker image using the Dockerfile.
 
 ---
 
-### 📛 `container_name`
+#### 📛 `container_name`
 
 Sets a readable container name.
 
 ---
 
-### 🔌 `ports`
+#### 🔌 `ports`
 
 Maps container port → host port.
 
@@ -431,18 +420,16 @@ Now we can open the app in our browser.
 
 ---
 
-### 📁 `volumes`
+#### 📁 `volumes`
 
-Mounts the project folder into the container.
+Mounts the project folder into the container. Meaning:
 
-Meaning:
-
-✔ when we edit code locally
-✔ changes appear immediately in the container
+✔ when we edit code locally  
+✔ changes appear immediately in the container  
 
 ---
 
-### ⚠ Special line
+#### ⚠ Special line
 
 ```
 - /app/node_modules
@@ -455,7 +442,7 @@ This prevents conflicts between:
 
 ---
 
-# 7️⃣ Step 7 – Create .dockerignore
+## 7️⃣ Create .dockerignore
 
 Create:
 
@@ -474,20 +461,18 @@ dist
 
 ---
 
-## 💡 Why is this important?
+### 💡 Why is this important?
 
-Without `.dockerignore`, Docker might copy unnecessary files.
+Without `.dockerignore`, Docker might copy unnecessary files. Problems this can cause:
 
-Problems this can cause:
-
-❌ slow builds
-❌ large images
-❌ dependency conflicts
-❌ strange `node_modules` errors
+❌ slow builds  
+❌ large images  
+❌ dependency conflicts  
+❌ strange `node_modules` errors  
 
 ---
 
-# 8️⃣ Step 8 – Run the Project
+## 8️⃣ Run the Project
 
 Build and start the container:
 
@@ -505,7 +490,7 @@ The React application should now run **inside Docker**.
 
 ---
 
-## 💡 Why do we use `--build`?
+### 💡 Why do we use `--build`?
 
 Because the image might not exist yet or the Dockerfile changed.
 
@@ -513,7 +498,7 @@ This ensures Docker **rebuilds the image**.
 
 ---
 
-# 9️⃣ Step 9 – Test Live Editing
+## 9️⃣ Test Live Editing
 
 Open:
 
@@ -542,7 +527,7 @@ You should see the updated content.
 
 ---
 
-## ⚠ If live editing does not work
+### ⚠ If live editing does not work
 
 Update `vite.config.js`:
 
@@ -570,17 +555,17 @@ docker compose up --build
 
 ---
 
-## 💡 Why this step matters
+### 💡 Why this step matters
 
 Now we can see:
 
-✔ code edited on host machine
-✔ application running in container
-✔ Docker supports a **normal development workflow**
+✔ code edited on host machine  
+✔ application running in container  
+✔ Docker supports a **normal development workflow**  
 
 ---
 
-# 🔟 Step 10 – Stop the Container
+## 🔟 Stop the Container
 
 Stop everything:
 
@@ -590,15 +575,15 @@ docker compose down
 
 ---
 
-## 💡 Why is this useful?
+### 💡 Why is this useful?
 
 It cleans up the running container and keeps the environment tidy.
 
 ---
 
-# 📌 Summary
+## 📌 Summary
 
-## What we did
+What we did
 
 1️⃣ Created a React project with Vite
 2️⃣ Tested it locally
@@ -609,7 +594,7 @@ It cleans up the running container and keeps the environment tidy.
 
 ---
 
-# 🧠 Key Concepts
+## 🧠 Key Concepts
 
 ### ⚛ React
 
@@ -629,27 +614,26 @@ Tool for defining and running multi-container applications.
 
 ---
 
-# 🚀 Why this is a good first model
+## 🚀 Why this is a good first model
 
 This setup is:
 
-✔ simple
-✔ realistic
-✔ easy to debug
-✔ easy to teach
-✔ easy to expand later
+✔ simple  
+✔ realistic  
+✔ easy to debug  
+✔ easy to expand later  
 
 Later we can extend it to:
 
-* React container
+* React container  
 * Node/Express backend
 * PostgreSQL database
 
 ---
 
-# 📂 Final Files
+## 📂 Final Files
 
-## Dockerfile
+### `Dockerfile`
 
 ```dockerfile
 FROM node:24-alpine
@@ -663,11 +647,10 @@ CMD ["npm", "run", "dev", "--", "--host"]
 
 ---
 
-## docker-compose.yml
+### `docker-compose.yml`
 
 ```yaml
 name: advanced-web-final-project-phase1
-
 services:
   react-app:
     build: .
@@ -681,7 +664,7 @@ services:
 
 ---
 
-## .dockerignore
+### `.dockerignore`
 
 ```
 node_modules
@@ -726,6 +709,22 @@ h1 {
 p {
   font-size: 18px;
 }
+```
+
+
+## `src/main.jsx`
+
+```javascript
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+//import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
 ```
 
 Your styled page appears at:  
