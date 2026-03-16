@@ -125,7 +125,7 @@ Vite is widely used in modern web‑based projects and tooling:
 
 ---
 
-# ⭐ React and Vite: How They Work Together
+# ⭐ React and Vite → How They Work Together
 
 **React** is a JavaScript library for building user interfaces.  
 **Vite** is a modern frontend build tool and dev server.
@@ -215,7 +215,7 @@ Because it gives you:
 
 ---
 
-# 🐳 React in Docker – First Setup
+# 🐳 React in Docker → First Setup
 
 ## 🎯 Goal
 
