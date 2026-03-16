@@ -315,6 +315,12 @@ So the process is simpler:
 
 ## 2️⃣ Test That React Works
 
+By default, the application starts after installation. The application can be stopped with CTRL-C. To relaunch the application, go to the folder
+
+```bash
+cd final-project
+```
+
 Run:
 
 ```bash
@@ -350,7 +356,7 @@ A good engineering rule:
 A typical **Vite + React project** looks like this:
 
 ```
-react-app/
+final-project/
 ├─ index.html
 ├─ package.json
 ├─ package-lock.json
