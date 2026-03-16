@@ -658,9 +658,7 @@ function App() {
 export default App;
 ```
 
-Save and refresh the browser.
-
-You should see the updated content.
+Save and refresh the browser. You should see the updated content.
 
 ---
 
@@ -722,12 +720,12 @@ It cleans up the running container and keeps the environment tidy.
 
 What we did
 
-1️⃣ Created a React project with Vite
-2️⃣ Tested it locally
-3️⃣ Added Docker support
-4️⃣ Built a React container
-5️⃣ Ran the app in Docker
-6️⃣ Confirmed live editing works
+1️⃣ Created a React project with Vite  
+2️⃣ Tested it locally  
+3️⃣ Added Docker support  
+4️⃣ Built a React container  
+5️⃣ Ran the app in Docker  
+6️⃣ Confirmed live editing works  
 
 ---
 
@@ -864,7 +862,6 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
-Your styled page appears at:  
-👉 <http://localhost:5173/>
+Your styled page appears 👉 <http://localhost:5173/>
 
 ***
