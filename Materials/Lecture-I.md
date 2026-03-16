@@ -410,9 +410,9 @@ We still must understand:
 
 Now we add Docker files to the root of the project. We will create:
 
-📄 `Dockerfile` → 5️⃣
-📄 `docker-compose.yml` → 6️⃣
-📄 `.dockerignore` → 7️⃣
+📄 `Dockerfile` → 5️⃣  
+📄 `docker-compose.yml` → 6️⃣  
+📄 `.dockerignore` → 7️⃣  
 
 ---
 
