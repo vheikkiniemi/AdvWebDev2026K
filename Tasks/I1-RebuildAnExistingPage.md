@@ -227,8 +227,8 @@ final-project/
 
 Run the **refactored version** in:
 
-* a **Virtual Machine** **or**
-* a **Docker container**
+* a **Virtual Machine + Docker** **or**
+* a **Docker in the desktop**
 
 Then take **one screenshot** that clearly shows:
 
@@ -261,17 +261,18 @@ Submit:
 
 ## ✅ Checklist
 
-[ ] Chosen one original page
-[ ] Added the original page or source link into `originalPage/`
-[ ] Created a React project with Vite
-[ ] Added `Dockerfile`
-[ ] Added `docker-compose.yml`
-[ ] Added `.dockerignore`
-[ ] Project starts with Docker
-[ ] Page is rebuilt in React
-[ ] Layout is close to the original page
-[ ] Components are used in a sensible way
-[ ] `App.jsx` is not overloaded with the entire page markup
-[ ] Code pushed to GitHub
+[ ] Chosen one original page  
+[ ] Added the original page or source link into `originalPage/`  
+[ ] Created a React project with Vite  
+[ ] Added `Dockerfile`  
+[ ] Added `docker-compose.yml`  
+[ ] Added `.dockerignore`  
+[ ] Project starts with Docker  
+[ ] Page is rebuilt in React  
+[ ] Layout is close to the original page  
+[ ] Components are used in a sensible way  
+[ ] `App.jsx` is not overloaded with the entire page markup  
+[ ] Code pushed to GitHub  
+[ ] Screenshot taken  
 
 ---
