@@ -233,7 +233,7 @@ Run the **refactored version** in:
 Then take **one screenshot** that clearly shows:
 
 * the application working in a browser
-* visible proof of the running backend environment (VM terminal or Docker output)
+* visible proof of the running backend environment (Terminal or Docker output)
 
 ---
 
