@@ -481,3 +481,310 @@ For example:
 A React subpage is usually created using **React Router**. Each route renders a different component.
 
 ---
+
+# 🌐 Extending the React Form: Sending Data to httpbin
+
+## 🔄 What is httpbin?
+
+`httpbin` is a testing service.
+
+When you send data like this:
+
+```json
+{
+  "name": "Ville",
+  "email": "ville@test.com"
+}
+```
+
+It responds with something like:
+
+```json
+{
+  "json": {
+    "name": "Ville",
+    "email": "ville@test.com"
+  }
+}
+```
+
+👉 So it **echoes your data back**.
+
+---
+
+## 🧱 Step 1: Add state for server response
+
+We extend our component with two new states:
+
+```jsx
+const [apiResponse, setApiResponse] = useState(null);
+const [loading, setLoading] = useState(false);
+```
+
+### 💡 Why?
+
+* `apiResponse` → stores server response
+* `loading` → improves UX (e.g. disable button / show message)
+
+---
+
+## 🚀 Step 2: Update handleSubmit to send data
+
+Replace your current `handleSubmit` with this:
+
+```jsx
+async function handleSubmit(event) {
+  event.preventDefault();
+
+  const result = registerSchema.safeParse(formData);
+
+  if (!result.success) {
+    const fieldErrors = {};
+
+    result.error.issues.forEach((issue) => {
+      const fieldName = issue.path[0];
+      fieldErrors[fieldName] = issue.message;
+    });
+
+    setErrors(fieldErrors);
+    setSuccessMessage("");
+    setApiResponse(null);
+    return;
+  }
+
+  setErrors({});
+  setSuccessMessage("");
+  setLoading(true);
+
+  try {
+    const response = await fetch("https://httpbin.org/post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(result.data),
+    });
+
+    const data = await response.json();
+
+    setApiResponse(data);
+    setSuccessMessage("Form submitted and sent to server successfully! 🎉");
+  } catch (error) {
+    console.error(error);
+    setSuccessMessage("Something went wrong while sending data ❌");
+  } finally {
+    setLoading(false);
+  }
+}
+```
+
+---
+
+## 🔍 What is happening here?
+
+### 1. Validation still happens first 🛡
+
+```js
+registerSchema.safeParse(formData)
+```
+
+👉 No invalid data is sent to the server.
+
+---
+
+### 2. `fetch()` sends the data 🌐
+
+```js
+await fetch("https://httpbin.org/post", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(result.data),
+});
+```
+
+👉 This is a standard REST API call.
+
+---
+
+### 3. Response is converted to JSON 📦
+
+```js
+const data = await response.json();
+```
+
+---
+
+### 4. Response is saved to state 🧠
+
+```js
+setApiResponse(data);
+```
+
+---
+
+## 🎨 Step 3: Show response nicely in UI
+
+Now we display the echo in a **clean and readable way**. Add this below your form:
+
+```jsx
+{loading && <p>Sending data... ⏳</p>}
+
+{apiResponse && (
+  <div style={{ marginTop: "20px" }}>
+    <h2>Server Response (Echo)</h2>
+
+    <div
+      style={{
+        background: "#1e1e1e",
+        color: "#ffffff",
+        padding: "15px",
+        borderRadius: "10px",
+        overflowX: "auto",
+      }}
+    >
+      <pre>{JSON.stringify(apiResponse.json, null, 2)}</pre>
+    </div>
+  </div>
+)}
+```
+
+---
+
+## ✨ Result in UI
+
+After submitting:
+
+### ✅ User sees:
+
+* success message 🎉
+* clean formatted JSON response
+* their own data echoed back
+
+Example:
+
+```json
+{
+  "name": "Ville",
+  "email": "ville@test.com",
+  "password": "12345678"
+}
+```
+
+---
+
+## 🎯 Why show only `apiResponse.json`?
+
+httpbin returns a lot of extra data:
+
+* headers
+* origin IP
+* URL
+
+We focus on:
+
+```js
+apiResponse.json
+```
+
+👉 This keeps the UI clean and beginner-friendly.
+
+---
+
+## 🎨 Optional: Better UI styling (Tailwind version)
+
+If you are using Tailwind:
+
+```jsx
+{apiResponse && (
+  <div className="mt-6">
+    <h2 className="text-xl font-semibold mb-2">
+      Server Response (Echo)
+    </h2>
+
+    <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm">
+      {JSON.stringify(apiResponse.json, null, 2)}
+    </pre>
+  </div>
+)}
+```
+
+---
+
+## ⚠ Common mistakes
+
+### ❌ Forgetting `await`
+
+```js
+const response = fetch(...)
+```
+
+👉 This returns a Promise, not actual data.
+
+---
+
+### ❌ Not converting to JSON
+
+```js
+response.json()
+```
+
+👉 Must be awaited:
+
+```js
+await response.json()
+```
+
+---
+
+### ❌ Sending invalid data
+
+If validation is skipped:
+
+👉 bad data goes to server
+👉 harder to debug later
+
+---
+
+### ❌ Not handling errors
+
+Always wrap API calls in:
+
+```js
+try { ... } catch (error) { ... }
+```
+
+---
+
+## 🧠 Full data flow (important concept)
+
+### 🔄 End-to-end flow:
+
+1. User types into form
+2. React stores data (`useState`)
+3. User clicks submit
+4. Zod validates input
+5. If valid → send to API
+6. Server (httpbin) responds
+7. React stores response
+8. UI updates and shows result
+
+👉 This is the **core pattern of modern web apps**
+
+---
+
+## 🚀 Final takeaway
+
+Now your React subpage is no longer just UI — it behaves like a real application:
+
+✅ validates input
+✅ communicates with a server
+✅ handles async logic
+✅ displays structured response
+
+This is exactly how:
+
+* REST APIs are tested
+* frontends talk to backends
+* real systems are built
