@@ -243,9 +243,9 @@ Submit:
 
 ## 🧪 Grading (0–2 points)
 
-* **0 points:** No working solution is provided.
-* **1 point:** Routing works and the form works.
-* **2 points:** Routing works, the form works, and the inputs are validated properly using Zod.
+* **0 points:** No working solution is provided.  
+* **1 point:** Routing works and the form works.   
+* **2 points:** Routing works, the form works, and the inputs are validated properly using Zod. The page looks good. The usability of the page is good.
 
 ---
 
