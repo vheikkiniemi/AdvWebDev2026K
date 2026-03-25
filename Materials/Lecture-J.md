@@ -992,8 +992,8 @@ With this:
 try_files $uri /index.html;
 ```
 
-✅ Nginx always returns `index.html`
-✅ React Router handles the route in the browser
+✅ Nginx always returns `index.html`  
+✅ React Router handles the route in the browser  
 
 ---
 
