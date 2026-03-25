@@ -478,7 +478,7 @@ For example:
 
 ---
 
-## 🧭 Summary
+## 🚀 Takeaway
 
 A React subpage is usually created using **React Router**. Each route renders a different component.
 
@@ -774,14 +774,14 @@ try { ... } catch (error) { ... }
 
 ---
 
-## 🚀 Final takeaway
+## 🚀 Takeaway
 
 Now your React subpage is no longer just UI — it behaves like a real application:
 
-✅ validates input
-✅ communicates with a server
-✅ handles async logic
-✅ displays structured response
+✅ validates input  
+✅ communicates with a server  
+✅ handles async logic  
+✅ displays structured response  
 
 This is exactly how:
 
@@ -1152,7 +1152,7 @@ Think of it like a restaurant 🍽️
 
 ---
 
-## ✅ Final takeaway
+## 🚀 Takeaway
 
 A production-ready React deployment looks like this:
 
