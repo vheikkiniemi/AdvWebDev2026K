@@ -94,7 +94,7 @@ function App() {
 export default App;
 ```
 
-### 💡 Explanation
+**💡 Explanation**
 
 * `BrowserRouter` enables routing
 * `Routes` contains all route definitions
@@ -123,7 +123,7 @@ function HomePage() {
 export default HomePage;
 ```
 
-### ✅ Why use `Link`?
+**✅ Why use `Link`?**
 
 In React, we usually use `Link` instead of a normal `<a>` element for internal navigation. This keeps navigation fast and prevents full page reloads.
 
@@ -164,7 +164,7 @@ const registerSchema = z.object({
 });
 ```
 
-### 🔍 What does this do?
+**🔍 What does this do?**
 
 This schema defines the structure of valid form data.
 
@@ -374,13 +374,15 @@ Example:
 
 ---
 
-## ⚠ Common beginner mistakes
+## ⚠ Common mistakes
 
-### 1. Forgetting `preventDefault()`
+**❌ Forgetting `preventDefault()`**
 
 This causes page reload on submit.
 
-### 2. Using wrong `name` values
+---
+
+**❌ Using wrong `name` values**
 
 The `name` attribute in the input must match the keys in `formData`.
 
@@ -398,7 +400,7 @@ formData.email
 
 ---
 
-### 3. Forgetting `value` in controlled inputs
+**❌ Forgetting `value` in controlled inputs**
 
 A controlled input needs both:
 
@@ -407,7 +409,7 @@ A controlled input needs both:
 
 ---
 
-### 4. Not showing error messages
+**❌ Not showing error messages**
 
 Validation is much less useful if the user cannot see what failed.
 
@@ -435,7 +437,7 @@ This is the preferred React way for forms because it keeps the UI and the data i
 
 Once the basic version works, we can extend it.
 
-### Improvement ideas:
+**Improvement ideas:**
 
 * add more fields
 * add confirm password validation
@@ -465,7 +467,7 @@ const registerSchema = z
   });
 ```
 
-### 💡 Why use `refine()`?
+**💡 Why use `refine()`?**
 
 It is useful when validation depends on multiple fields.
 
@@ -521,7 +523,7 @@ const [apiResponse, setApiResponse] = useState(null);
 const [loading, setLoading] = useState(false);
 ```
 
-### 💡 Why?
+**💡 Why?**
 
 * `apiResponse` → stores server response
 * `loading` → improves UX (e.g. disable button / show message)
@@ -654,9 +656,7 @@ Now we display the echo in a **clean and readable way**. Add this below your for
 
 ## ✨ Result in UI
 
-After submitting:
-
-### ✅ User sees:
+After submitting user sees:
 
 * success message 🎉
 * clean formatted JSON response
@@ -714,7 +714,7 @@ If you are using Tailwind:
 
 ## ⚠ Common mistakes
 
-### ❌ Forgetting `await`
+**❌ Forgetting `await`**
 
 ```js
 const response = fetch(...)
