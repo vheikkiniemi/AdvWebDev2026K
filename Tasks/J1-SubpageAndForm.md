@@ -213,6 +213,19 @@ final-project/
 
 ---
 
+## 🚀Last step: Deploy and demonstrate the working system 
+
+Run the **form version** in:
+
+* a **Virtual Machine + Docker** **or**
+* a **Docker in the desktop**
+
+Then take **one screenshot** that clearly shows:
+
+* the application (especially the form) working in a browser
+* visible proof of the running backend environment (Terminal or Docker output)
+
+---
 ## ⭐ Optional extra task (no points)
 
 As an additional exercise, you may try to build the application into a container and serve it with **Nginx**.
