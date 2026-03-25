@@ -724,7 +724,7 @@ const response = fetch(...)
 
 ---
 
-### ❌ Not converting to JSON
+**❌ Not converting to JSON**
 
 ```js
 response.json()
@@ -738,7 +738,7 @@ await response.json()
 
 ---
 
-### ❌ Sending invalid data
+**❌ Sending invalid data**
 
 If validation is skipped:
 
@@ -747,7 +747,7 @@ If validation is skipped:
 
 ---
 
-### ❌ Not handling errors
+**❌ Not handling errors**
 
 Always wrap API calls in:
 
@@ -759,7 +759,7 @@ try { ... } catch (error) { ... }
 
 ## 🧠 Full data flow (important concept)
 
-### 🔄 End-to-end flow:
+**🔄 End-to-end flow:**
 
 1. User types into form
 2. React stores data (`useState`)
@@ -789,8 +789,6 @@ This is exactly how:
 * frontends talk to backends
 * real systems are built
 
-Absolutely — here is a **clear, structured, and student-friendly English learning material** on how to **build a React application into a Docker container and serve it using Nginx**. Emojis included for readability and engagement. 🚀
-
 ---
 
 # Deploying a React App with Docker & Nginx
@@ -803,7 +801,7 @@ We are creating a production-ready setup:
 React App → Build → Static Files → Nginx → Browser
 ```
 
-### 🔄 Flow:
+**🔄 Flow:**
 
 1. You write your React code
 2. React is **built into static files**
@@ -812,7 +810,7 @@ React App → Build → Static Files → Nginx → Browser
 
 👉 Important idea:
 
-> React runs in the browser — not in Nginx.
+> React runs in the browser → Not in Nginx.
 
 ---
 
@@ -830,7 +828,7 @@ But in production, you must build the app:
 npm run build
 ```
 
-### 📦 Result
+**📦 Result**
 
 A folder is created (usually):
 
@@ -909,7 +907,7 @@ FROM node:20-alpine
 
 ---
 
-#### 📦 npm install
+**📦 npm install**
 
 ```dockerfile
 COPY package*.json ./
@@ -920,7 +918,7 @@ RUN npm install
 
 ---
 
-#### 🏗 Build
+**🏗 Build**
 
 ```dockerfile
 RUN npm run build
@@ -941,7 +939,7 @@ FROM nginx:alpine
 
 ---
 
-#### 📁 Copy build to Nginx
+**📁 Copy build to Nginx**
 
 ```dockerfile
 COPY --from=builder /app/dist /usr/share/nginx/html
@@ -959,7 +957,7 @@ Nginx serves files from:
 
 ## 🌐 Step 3: Configure Nginx (React Router support)
 
-### 📄 nginx.conf
+**📄 nginx.conf**
 
 ```nginx
 server {
@@ -975,13 +973,9 @@ server {
 }
 ```
 
----
+**🧠 Why is this needed?**
 
-### 🧠 Why is this needed?
-
-React uses **client-side routing**.
-
-Example:
+React uses **client-side routing**. Example:
 
 ```
 /register
@@ -1005,7 +999,7 @@ try_files $uri /index.html;
 
 ## 🚀 Step 4: Build and run the container
 
-### 🔨 Build image
+**🔨 Build image**
 
 ```bash
 docker build -t react-nginx-app .
@@ -1013,7 +1007,7 @@ docker build -t react-nginx-app .
 
 ---
 
-### ▶️ Run container
+**▶️ Run container**
 
 ```bash
 docker run -d -p 8080:80 react-nginx-app
@@ -1021,7 +1015,7 @@ docker run -d -p 8080:80 react-nginx-app
 
 ---
 
-### 🌍 Open in browser
+**🌍 Open in browser**
 
 ```
 http://localhost:8080
@@ -1031,7 +1025,7 @@ http://localhost:8080
 
 ## 🐳 Step 5: Docker Compose (optional but recommended)
 
-### 📄 docker-compose.yml
+**📄 docker-compose.yml**
 
 ```yaml
 services:
@@ -1041,7 +1035,7 @@ services:
       - "8080:80"
 ```
 
-### ▶️ Run
+**▶️ Run**
 
 ```bash
 docker compose up --build
@@ -1049,15 +1043,15 @@ docker compose up --build
 
 ---
 
-### 🔄 What happens when a user opens the app?
+**🔄 What happens when a user opens the app?**
 
-**🧭 Example: user visits**
+**👉 Example: user visits**
 
 ```
 http://localhost:8080/register
 ```
 
-### 🔍 Flow:
+**🔍 Flow:**
 
 1. Browser → request `/register`
 2. Nginx:
@@ -1069,9 +1063,9 @@ http://localhost:8080/register
 
 ---
 
-## ⚠️ Common beginner mistakes
+## ⚠️ Common mistakes
 
-### ❌ 1. Using dev server in production
+**❌ Using dev server in production**
 
 ```bash
 npm run dev
@@ -1081,20 +1075,20 @@ npm run dev
 
 ---
 
-### ❌ 2. Missing nginx config
+**❌ Missing nginx config**
 
 👉 Leads to 404 errors on subpages
 
 ---
 
-### ❌ 3. Wrong build folder
+**❌ Wrong build folder**
 
 * Vite → `dist`
 * Create React App → `build`
 
 ---
 
-### ❌ 4. Thinking Nginx runs React
+**❌ Thinking Nginx runs React**
 
 👉 Nginx does NOT execute React
 👉 Browser executes React
@@ -1103,17 +1097,21 @@ npm run dev
 
 ## 🧠 Key concept: separation of concerns
 
-### 🔹 React
+**🔹 React**
 
 * builds UI
 * runs in browser
 
-### 🔹 Nginx
+---
+
+**🔹 Nginx**
 
 * serves files
 * handles HTTP requests
 
-### 🔹 Docker
+---
+
+**🔹 Docker**
 
 * packages everything together
 
@@ -1158,9 +1156,9 @@ Think of it like a restaurant 🍽️
 
 A production-ready React deployment looks like this:
 
-✔ React is built into static files
-✔ Docker packages the app
-✔ Nginx serves the files
-✔ Browser runs the application
+✔ React is built into static files  
+✔ Docker packages the app  
+✔ Nginx serves the files  
+✔ Browser runs the application  
 
 ---
