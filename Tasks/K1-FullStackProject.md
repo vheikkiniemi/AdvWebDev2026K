@@ -281,18 +281,18 @@ Submit:
 
 ## ✅ Checklist
 
-[ ] Extracted `FinalProject.zip`
-[ ] Moved the Task I page into the frontend
-[ ] Added `originalPage/` inside the frontend
-[ ] Added the Task J routed subpage
-[ ] Updated the form to send data to the backend API
-[ ] Modified the database definition inside `db/`
-[ ] Modified `backend/server.js`
-[ ] Modified React files inside `frontend/src/`
-[ ] Verified that submitted data is stored in the database
-[ ] Added a new page for showing stored data if aiming for 2 points
-[ ] Pushed the finished work to GitHub
-[ ] Took one screenshot for submission
+[ ] Extracted `FinalProject.zip`  
+[ ] Moved the Task I page into the frontend  
+[ ] Added `originalPage/` inside the frontend  
+[ ] Added the Task J routed subpage  
+[ ] Updated the form to send data to the backend API  
+[ ] Modified the database definition inside `db/`  
+[ ] Modified `backend/server.js`   
+[ ] Modified React files inside `frontend/src/`  
+[ ] Verified that submitted data is stored in the database  
+[ ] Added a new page for showing stored data if aiming for 2 points  
+[ ] Pushed the finished work to GitHub  
+[ ] Took one screenshot for submission  
 
 ---
 
