@@ -9,9 +9,8 @@ In this final course task, you will take the pages you created earlier in **Task
 
 You will receive a file called:
 
-```text
 [FinalProject.zip](../Materials/FinalProject.zip)
-```
+
 
 This package contains the full stack project structure. Your job is to extend it so that your earlier React pages work inside the full system and the form data can be saved into the database through the API.
 
@@ -36,9 +35,7 @@ This is the **final task of the course**, so the main focus is on showing that y
 
 You will receive a ready-made package:
 
-```text
 [FinalProject.zip](../Materials/FinalProject.zip)
-```
 
 It contains the full stack project with:
 
@@ -73,9 +70,7 @@ You must move the earlier pages into the full stack project and make sure they w
 
 Extract:
 
-```text
 [FinalProject.zip](../Materials/FinalProject.zip)
-```
 
 Study the project structure first. **AND watch the instructional video found on panopto**
 
