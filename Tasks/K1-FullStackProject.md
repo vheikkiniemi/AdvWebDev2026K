@@ -3,7 +3,7 @@
 
 ---
 
-# 📘 Task K: Integrate the Previous React Pages into the Final Full Stack Project
+# 📘 Task K1: Integrate the Previous React Pages into the Final Full Stack Project
 
 In this final course task, you will take the pages you created earlier in **Task I** and **Task J** and integrate them into a ready-made **full stack application**.
 
