@@ -37,7 +37,9 @@ Your existing project already includes:
 
 You will now **extend** that application instead of creating a completely new one.
 
-[Check the introduction material](../Materials/Lecture-J.md)
+[**👉 AND Check the introduction material**](../Materials/Lecture-J.md)
+
+ **🎥 AND watch the instructional video found on panopto**
 
 ---
 

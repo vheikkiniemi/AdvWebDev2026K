@@ -72,7 +72,11 @@ Extract:
 
 👉 [FinalProject.zip](../Materials/FinalProject.zip)
 
-Study the project structure first. **AND watch the instructional video found on panopto**
+Study the project structure first.
+
+ **🎥 AND watch the instructional video found on panopto**
+
+ [**👉 AND Check the introduction material**](../Materials/Lecture-K.md)
 
 You will mainly work inside these folders:
 

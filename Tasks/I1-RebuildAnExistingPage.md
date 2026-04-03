@@ -36,7 +36,9 @@ The most important goal is to practice:
 
 ## 📦 Provided materials
 
-[Use the React + Docker setup introduced in course](../Materials/Lecture-I.md)
+[**👉 Use the React + Docker setup introduced in course**](../Materials/Lecture-I.md)
+
+ **🎥 AND watch the instructional video found on panopto**
 
 Your repository must include at least these files and folders:
 
